@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="EUROGAM – Distributeur de pièces automobiles multimarques pour professionnels à Joué-lès-Tours (37). Livraison 24h. Marques Bosch, Sasic, Dayco, Mahle, Cevam, SBS.">
+  <meta name="keywords" content="pièces auto Joué-lès-Tours, distributeur pièces automobile professionnels, Bosch, Mahle, Dayco, Sasic, Cevam, SBS, Indre-et-Loire">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="EUROGAM – Pièces autos pour les pros – Joué-lès-Tours">
+  <meta property="og:description" content="Distributeur de pièces automobiles multimarques. Livraison express 24h.">
+  <meta property="og:image" content="images/logo.jpg">
+  <title>EUROGAM – Pièces autos pour les pros – Joué-lès-Tours (37)</title>
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"EUROGAM","description":"Distributeur de pièces automobiles pour professionnels à Joué-lès-Tours.","address":{"@type":"PostalAddress","addressLocality":"Joué-lès-Tours","addressRegion":"Indre-et-Loire","addressCountry":"FR"},"telephone":"02 47 73 96 65","email":"contact@eurogam.fr","openingHours":["Mo-Fr 07:30-18:00","Sa 08:00-12:00"],"areaServed":"Centre-Val de Loire"}</script>
+</head>
+<body>
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span>Livraison express 24h</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Bosch · Sasic · Dayco · Mahle · Cevam · SBS</span><span>Offres du moment – Économisez dès aujourd'hui</span><span>Livraison express 24h</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Bosch · Sasic · Dayco · Mahle · Cevam · SBS</span><span>Offres du moment – Économisez dès aujourd'hui</span>
+  </div>
+</div>
+ 
+<!-- HEADER -->
+<header>
+  <nav>
+    <a class="logo-area" href="#" onclick="showPage('accueil')">
+      <img src="images/logo.jpg" alt="EUROGAM – Pièces autos pour les pros – Joué les Tours" class="logo-full">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('accueil')">Accueil</a></li>
+      <li><a href="#" onclick="showPage('produits')">Produits</a></li>
+      <li><a href="#" onclick="showPage('offres')" class="nav-offres">Offres</a></li>
+      <li><a href="#" onclick="showPage('equipe')">Équipe</a></li>
+      <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+      <li><a href="#" class="nav-cta" onclick="showPage('contact')">Nous contacter</a></li>
+    </ul>
+  </nav>
+</header>
+ 
+<!-- FLOATING BUTTON -->
+<button class="float-btn" onclick="showPage('contact')"><span class="float-lbl">Nous contacter</span></button>
+ 
+<!-- ADMIN MODAL -->
+<div class="modal-overlay" id="admin-modal" onclick="if(event.target===this)closeAdminModal()">
+  <div class="modal-box">
+    <div class="modal-title">Accès Administrateur</div>
+    <div class="modal-sub">Entrez le mot de passe pour gérer les offres du moment.</div>
+    <input type="password" class="modal-input" id="admin-pwd" placeholder="Mot de passe…" onkeydown="if(event.key==='Enter')checkAdminPwd()">
+    <div class="modal-err" id="admin-err">Mot de passe incorrect. Veuillez réessayer.</div>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeAdminModal()">Annuler</button>
+      <button class="btn-primary" onclick="checkAdminPwd()">Accéder →</button>
+    </div>
+  </div>
+</div>
+ 
+<!-- ══ PAGE : ACCUEIL ══ -->
+<div id="page-accueil" class="page active">
+  <section class="hero">
+
+    <!-- Layer 0: warehouse photo -->
+    <div class="hero-bg-photo"></div>
+    <!-- Layer 1: animated colour overlay (brand palette blended over photo) -->
+    <div class="hero-bg-anim"></div>
+    <!-- Layer 2: vignette -->
+    <div class="hero-bg-vignette"></div>
+    <!-- Layer 3: grid -->
+    <div class="hero-grid-overlay"></div>
+    <!-- Layer 4: floating particles / embers -->
+    <div class="hero-particles" id="hero-particles"></div>
+    <!-- Layer 5: parallax pattern -->
+    <div class="hero-parallax" id="parallax-bg"></div>
+    <!-- Layer 6: diagonal orange accent -->
+    <div class="hero-diag"></div>
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge">Distributeur de pièces auto · Joué-lès-Tours · 37</div>
+        <h1>Votre partenaire <em>pièces auto</em> de confiance</h1>
+        <p class="hero-sub">EUROGAM fournit les garages et professionnels de l'automobile en pièces multimarques. Rapidité de livraison, réactivité et expertise au service de votre activité.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary" onclick="showPage('contact')">Nous contacter</a>
+          <a href="#" class="btn-secondary" onclick="showPage('contact')">Demander un devis</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-num">24h</div><div class="stat-label">Délai de livraison</div></div>
+        <div class="stat-card"><div class="stat-num">40+</div><div class="stat-label">Ans d'expertise</div></div>
+        <div class="stat-card"><div class="stat-num">500+</div><div class="stat-label">Références disponibles</div></div>
+        <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Marques premium</div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- COMPTEURS ANIMÉS -->
+  <section class="counters-section">
+    <div class="container">
+      <div class="counters-grid">
+        <div class="counter-item reveal"><span class="counter-num" data-target="40" data-suffix="+">0</span><div class="counter-label">Années d'expérience</div></div>
+        <div class="counter-item reveal d1"><span class="counter-num" data-target="500" data-suffix="+">0</span><div class="counter-label">Références produits</div></div>
+        <div class="counter-item reveal d2"><span class="counter-num" data-target="6" data-suffix="">0</span><div class="counter-label">Marques partenaires</div></div>
+        <div class="counter-item reveal d3"><span class="counter-num" data-target="300" data-suffix="+">0</span><div class="counter-label">Clients professionnels satisfaits</div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="advantages">
+    <div class="container">
+      <div class="section-label reveal">Pourquoi EUROGAM</div>
+      <h2 class="section-title reveal">Des avantages concrets<br>pour votre garage</h2>
+      <div class="adv-grid">
+        <div class="adv-card reveal d1"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="adv-title">Livraison Express</div><p class="adv-text">Pièces disponibles en 24h. Réduisez le temps d'immobilisation des véhicules et augmentez votre rentabilité.</p></div>
+        <div class="adv-card reveal d2"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg></div><div class="adv-title">Proximité Locale</div><p class="adv-text">Ancré à Joué-lès-Tours, nous connaissons les besoins des professionnels de la région Centre-Val de Loire.</p></div>
+        <div class="adv-card reveal d3"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="adv-title">Marques de Référence</div><p class="adv-text">Bosch, Sasic, Dayco, Mahle, Cevam, SBS : uniquement des équipementiers reconnus pour leurs standards de qualité.</p></div>
+        <div class="adv-card reveal d4"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 6v2M12 16v2M8 12h8"/></svg></div><div class="adv-title">Tarifs Professionnels</div><p class="adv-text">Modèle coopératif = économies reversées. Des prix compétitifs adaptés aux volumes des professionnels.</p></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- OFFRES PREVIEW -->
+  <section>
+    <div class="container">
+      <div class="section-label reveal">Promotions en cours</div>
+      <h2 class="section-title reveal">Offres du moment</h2>
+      <p class="section-sub reveal">Profitez de nos offres exclusives réservées aux professionnels. Renouvelées régulièrement.</p>
+      <div class="offres-preview-grid" id="offres-preview-container"></div>
+      <div class="offres-voir-plus reveal"><a href="#" class="btn-primary" onclick="showPage('offres')">Voir toutes les offres →</a></div>
+    </div>
+  </section>
+ 
+  <!-- MARQUES CAROUSEL -->
+  <section class="brands">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Nos Marques</div>
+      <h2 class="section-title reveal">Partenaires de confiance</h2>
+      <p class="section-sub reveal">6 marques de référence mondiale — distribuées exclusivement par EUROGAM pour garantir qualité et disponibilité.</p>
+    </div>
+    <div class="brands-carousel-wrap">
+      <div class="brands-carousel">
+        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Électronique & moteur</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission</div></div>
+        <div class="brand-card"><span class="brand-logo-text">DAYCO</span><div class="brand-desc">Distribution</div></div>
+        <div class="brand-card"><span class="brand-logo-text">MAHLE</span><div class="brand-desc">Filtration & thermique</div></div>
+        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Électricité auto</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SBS</span><div class="brand-desc">Freinage</div></div>
+        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Électronique & moteur</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission</div></div>
+        <div class="brand-card"><span class="brand-logo-text">DAYCO</span><div class="brand-desc">Distribution</div></div>
+        <div class="brand-card"><span class="brand-logo-text">MAHLE</span><div class="brand-desc">Filtration & thermique</div></div>
+        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Électricité auto</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SBS</span><div class="brand-desc">Freinage</div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="container">
+      <div class="section-label reveal">Ce qu'ils disent</div>
+      <h2 class="section-title reveal">Témoignages clients</h2>
+      <div class="testi-grid">
+        <div class="testi-card reveal d1"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span></div><p class="testi-text">« Avec EUROGAM, les pièces arrivent le lendemain matin. Pour notre atelier, c'est indispensable. Fini les véhicules immobilisés faute de pièces ! »</p><div class="testi-author"><div class="testi-avatar">ML</div><div><div class="testi-name">Marc L.</div><div class="testi-role">Garage indépendant – Tours</div></div></div></div>
+        <div class="testi-card reveal d2"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span></div><p class="testi-text">« Excellent service, équipe réactive et catalogue très complet. Les prix sont vraiment adaptés aux professionnels. Je recommande sans hésiter. »</p><div class="testi-author"><div class="testi-avatar">SP</div><div><div class="testi-name">Sophie P.</div><div class="testi-role">Carrosserie – Joué-lès-Tours</div></div></div></div>
+        <div class="testi-card reveal d3"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-empty">★</span></div><p class="testi-text">« Fiabilité au rendez-vous depuis 5 ans. La plateforme de commande est simple et les références Bosch sont toujours en stock. »</p><div class="testi-author"><div class="testi-avatar">TD</div><div><div class="testi-name">Thomas D.</div><div class="testi-role">Mécanique multimarques – Amboise</div></div></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : PRODUITS ══ -->
+<div id="page-produits" class="page">
+  <section class="page-banner"><div class="container"><div class="section-label" style="color:var(--orange)">Catalogue</div><h1 class="section-title" style="color:#fff;margin:0">Nos Produits</h1></div></section>
+  <section>
+    <div class="container">
+      <p class="section-sub reveal">15 catégories de pièces automobiles multimarques pour tous types d'interventions. Marques distribuées : <strong>Bosch, Sasic, Dayco, Mahle, Cevam, SBS</strong>.</p>
+      <div class="cat-grid">
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/freinage.svg" alt="Freinage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg><div class="cat-name">Freinage</div></div>
+            <p class="cat-desc">Plaquettes, disques, étriers, maîtres-cylindres, flexibles.</p>
+            <div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">SBS</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/filtration.svg" alt="Filtration" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><div class="cat-name">Filtration</div></div>
+            <p class="cat-desc">Filtres huile, air, carburant, habitacle, urée.</p>
+            <div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Mahle</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/distribution.svg" alt="Distribution" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4z"/></svg><div class="cat-name">Distribution</div></div>
+            <p class="cat-desc">Kits courroie de distribution, chaînes, tendeurs, galets.</p>
+            <div class="cat-marques"><span class="cat-marque">Dayco</span><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/suspensions.svg" alt="Suspensions" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Suspensions</div></div>
+            <p class="cat-desc">Amortisseurs, ressorts, rotules, biellettes, roulements.</p>
+            <div class="cat-marques"><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/electricite.svg" alt="Électricité" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="cat-name">Électricité</div></div>
+            <p class="cat-desc">Alternateurs, démarreurs, capteurs, sondes, relais.</p>
+            <div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Cevam</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/embrayage.svg" alt="Embrayage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Embrayage</div></div>
+            <p class="cat-desc">Kits embrayage complets, volants bimasse, butées hydrauliques.</p>
+            <div class="cat-marques"><span class="cat-marque">Sasic</span><span class="cat-marque">Dayco</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/batteries.svg" alt="Batteries" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg><div class="cat-name">Batteries</div></div>
+            <p class="cat-desc">Batteries 12V, AGM, EFB, lithium pour véhicules start/stop.</p>
+            <div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/moteur.svg" alt="Moteur" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><div class="cat-name">Moteur</div></div>
+            <p class="cat-desc">Joints moteur, pistons, segments, thermostats, pompes à eau.</p>
+            <div class="cat-marques"><span class="cat-marque">Mahle</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/refroidissement.svg" alt="Refroidissement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg><div class="cat-name">Refroidissement</div></div>
+            <p class="cat-desc">Radiateurs, pompes à eau, vases d'expansion, durites, ventilateurs.</p>
+            <div class="cat-marques"><span class="cat-marque">Mahle</span><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/transmission.svg" alt="Transmission" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><div class="cat-name">Transmission</div></div>
+            <p class="cat-desc">Cardans, joints de transmission, différentiels, boîtes de vitesses.</p>
+            <div class="cat-marques"><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/carrosserie.svg" alt="Carrosserie" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div class="cat-name">Carrosserie</div></div>
+            <p class="cat-desc">Rétroviseurs, poignées, charnières, vitres, joints de carrosserie.</p>
+            <div class="cat-marques"></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/echappement.svg" alt="Échappement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg><div class="cat-name">Échappement</div></div>
+            <p class="cat-desc">Silencieux, catalyseurs, sondes lambda, flexibles d'échappement.</p>
+            <div class="cat-marques"></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/eclairage.svg" alt="Éclairage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><div class="cat-name">Éclairage</div></div>
+            <p class="cat-desc">Ampoules, phares, feux, projecteurs, ballasts xenon, LED.</p>
+            <div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/climatisation.svg" alt="Climatisation" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 013.96-3.28"/><path d="M14.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-3.96-3.28"/></svg><div class="cat-name">Climatisation</div></div>
+            <p class="cat-desc">Compresseurs, condenseurs, déshydrateurs, joints, fluides.</p>
+            <div class="cat-marques"></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/vitrage.svg" alt="Vitrage & Essuyage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v10"/><path d="M8 22h8"/><path d="M2 12h20"/></svg><div class="cat-name">Vitrage & Essuyage</div></div>
+            <p class="cat-desc">Balais d'essuie-glaces, bras, moteurs, lave-glaces, joints.</p>
+            <div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE : OFFRES DU MOMENT ══ -->
+<div id="page-offres" class="page">
+  <section class="page-banner"><div class="container"><div class="section-label" style="color:var(--orange)">Promotions</div><h1 class="section-title" style="color:#fff;margin:0">Offres du Moment</h1></div></section>
+  <section>
+    <div class="container">
+      <p class="section-sub reveal">Profitez de nos offres exclusives réservées aux professionnels de l'automobile. Renouvelées régulièrement pour vous garantir les meilleures économies.</p>
+      <div class="offres-grid-full" id="offres-full-container"></div>
+      <a href="#" class="admin-trigger" onclick="openAdminModal(); return false;">⚙ Administration</a>
+      <div class="admin-panel" id="admin-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+          <h3 style="margin:0">Gérer les offres du moment</h3>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:var(--gray-mid);background:var(--gray-light);padding:.4rem .9rem;border-radius:20px">
+            🏠 Les 2 premières offres apparaissent sur l'accueil
+          </div>
+        </div>
+        <!-- hidden file input -->
+        <input type="file" id="admin-file-input" accept="image/*" style="display:none" onchange="adminHandleFileUpload(this)">
+        <div id="admin-offres-list"></div>
+        <div class="admin-actions">
+          <button class="btn-adm-add" onclick="adminAddOffre()">+ Ajouter une offre</button>
+          <button class="btn-adm-save" onclick="adminSaveOffres()">Enregistrer & Publier</button>
+          <span class="adm-saved" id="adm-saved">Offres mises à jour sur toutes les pages !</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : À PROPOS ══ -->
+<div id="page-apropos" class="page">
+  <section class="page-banner"><div class="container"><div class="section-label" style="color:var(--orange)">Notre histoire</div><h1 class="section-title" style="color:#fff;margin:0">À Propos d'EUROGAM</h1></div></section>
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <div class="about-visual-text">EURO<br>GAM</div>
+          <div class="about-coop-badge">Depuis 1980</div>
+          <div class="about-year"><div class="about-year-num">40+</div><div class="about-year-label">Années d'expertise</div></div>
+        </div>
+        <div class="reveal-right">
+          <div class="section-label">Qui sommes-nous</div>
+          <h2 class="section-title">Un distributeur au service des professionnels</h2>
+          <p style="color:var(--gray-dark);font-size:.95rem;line-height:1.75;margin-bottom:1.5rem">EUROGAM est un distributeur spécialisé implanté à Joué-lès-Tours, en Indre-et-Loire. Depuis plus de 40 ans, nous fournissons des pièces automobiles multimarques aux professionnels de l'automobile de la région Centre-Val de Loire.</p>
+          <p style="color:var(--gray-dark);font-size:.95rem;line-height:1.75;margin-bottom:1.5rem">Nous plaçons l'intérêt de nos clients avant tout. Notre modèle nous permet de proposer des prix compétitifs et un service réactif, avec des investissements constants dans notre logistique et notre stock.</p>
+          <p style="color:var(--gray-dark);font-size:.95rem;line-height:1.75;margin-bottom:2rem">Notre atout majeur : la rapidité. Chaque minute d'immobilisation d'un véhicule coûte à votre garage. Notre logistique garantit une livraison en 24h.</p>
+          <div class="about-values">
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Proximité</strong> – Un ancrage local fort au cœur de la Touraine</div></div>
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Réactivité</strong> – Livraison express, réponse rapide, stock permanent</div></div>
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Fiabilité</strong> – Uniquement des marques reconnues et certifiées</div></div>
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Expertise</strong> – 40 ans de connaissance du marché de la pièce auto</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="container">
+      <div class="section-label reveal">Questions fréquentes</div>
+      <h2 class="section-title reveal">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Quels sont vos délais de livraison ?</div><div class="faq-a">Nous garantissons une livraison en 24h pour les pièces en stock à Joué-lès-Tours. Pour les pièces sur commande spéciale, comptez 48 à 72h.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Comment devenir client EUROGAM ?</div><div class="faq-a">Nous travaillons avec tous les professionnels de l'automobile : garages, carrosseries, centres auto. Contactez-nous et un conseiller vous rappellera pour étudier votre situation.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Quelle zone géographique couvrez-vous ?</div><div class="faq-a">Nous livrons principalement en Indre-et-Loire (37) et dans toute la région Centre-Val de Loire. Pour les commandes importantes, des livraisons hors région sont possibles.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Proposez-vous des remises sur volume ?</div><div class="faq-a">Oui, notre modèle coopératif inclut des remises progressives selon les volumes commandés. Contactez-nous pour une grille tarifaire personnalisée.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Puis-je retourner une pièce commandée par erreur ?</div><div class="faq-a">Oui, nous acceptons les retours sous 30 jours pour les pièces non montées, dans leur emballage d'origine. Contactez notre service client pour initier la procédure.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : ÉQUIPE ══ -->
+<div id="page-equipe" class="page">
+  <section class="page-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Notre équipe</div>
+      <h1 class="section-title" style="color:#fff;margin:0">L'Équipe EUROGAM</h1>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <p class="section-sub reveal" style="max-width:660px">
+        7 collaborateurs passionnés par l'automobile à votre service.
+        Experts en pièces détachées, ils sont là pour vous conseiller et vous livrer au plus vite.
+      </p>
+
+      <div class="equipe-grid" id="equipe-grid">
+
+        <!-- ─── DIRECTION ─── -->
+        <div class="equipe-section-title reveal">Direction</div>
+
+        <div class="equipe-card reveal d1">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <div class="equipe-card reveal d2">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <!-- ─── COMMERCIAL ─── -->
+        <div class="equipe-section-title reveal" style="margin-top:2rem">Commercial</div>
+
+        <div class="equipe-card reveal d1">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <div class="equipe-card reveal d2">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <div class="equipe-card reveal d3">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <!-- ─── LOGISTIQUE ─── -->
+        <div class="equipe-section-title reveal" style="margin-top:2rem">Logistique & Entrepôt</div>
+
+        <div class="equipe-card reveal d1">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <div class="equipe-card reveal d2">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <div class="equipe-card reveal d3">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+        <!-- ─── TECHNIQUE ─── -->
+        <div class="equipe-section-title reveal" style="margin-top:2rem">Expertise Technique</div>
+
+        <div class="equipe-card reveal d1">
+          <div class="equipe-avatar equipe-avatar--placeholder">?</div>
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">[FONCTION À RENSEIGNER]</div>
+            <div class="equipe-desc">[DESCRIPTION À RENSEIGNER]</div>
+          </div>
+        </div>
+
+      </div><!-- end equipe-grid -->
+
+      <!-- Note -->
+      <div class="reveal" style="margin-top:3rem;padding:1.5rem 2rem;background:linear-gradient(135deg,var(--blue),var(--blue-mid));border-radius:10px;color:#fff;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+        <div style="flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:.3rem">Vous souhaitez rejoindre l'équipe ?</div>
+          <div style="font-size:.9rem;opacity:.85">Envoyez votre candidature à <strong style="color:#fff">contact@eurogam.fr</strong> — nous recrutons des passionnés d'automobile.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+
+<!-- ══ PAGE : CONTACT ══ -->
+<div id="page-contact" class="page">
+  <section class="page-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Nous joindre</div>
+      <h1 class="section-title" style="color:#fff;margin:0">Contact</h1>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+
+      <!-- Intro -->
+      <div class="reveal" style="max-width:640px;margin-bottom:3rem">
+        <p style="font-size:1.05rem;color:var(--gray-dark);line-height:1.75">
+          Notre équipe est disponible du lundi au vendredi pour répondre à toutes vos demandes
+          de devis, d'adhésion ou d'information produit. Contactez-nous directement par téléphone,
+          email ou en passant à nos locaux.
+        </p>
+      </div>
+
+      <!-- 3 big contact cards -->
+      <div class="contact-cards-grid reveal">
+
+        <!-- Téléphone -->
+        <a href="tel:0247739665" class="contact-big-card">
+          <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="contact-big-label">Téléphone</div>
+          <div class="contact-big-val">02 47 73 96 65</div>
+          <div class="contact-big-hint">[HORAIRES À RENSEIGNER]</div>
+          <div class="contact-big-action">Appeler maintenant →</div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:[EMAIL À RENSEIGNER]" class="contact-big-card contact-big-card--orange">
+          <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></div>
+          <div class="contact-big-label">Email</div>
+          <div class="contact-big-val">[ADRESSE EMAIL À RENSEIGNER]</div>
+          <div class="contact-big-hint">Réponse sous 24h ouvrées</div>
+          <div class="contact-big-action">Envoyer un email →</div>
+        </a>
+
+        <!-- Adresse -->
+        <a href="https://www.google.com/maps?q=8+rue+de+Prony,+37300+Joué-lès-Tours" target="_blank" rel="noopener" class="contact-big-card">
+          <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-big-label">Adresse</div>
+          <div class="contact-big-val">8 rue de Prony</div>
+          <div class="contact-big-hint">37300 Joué-lès-Tours<br>Indre-et-Loire (37)</div>
+          <div class="contact-big-action">Voir sur Google Maps →</div>
+        </a>
+
+      </div>
+
+      <!-- Horaires + Map -->
+      <div class="contact-bottom reveal" style="margin-top:3rem">
+        <div class="contact-hours-block">
+          <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--blue);text-transform:uppercase;margin-bottom:1.2rem">Horaires d'ouverture</h3>
+          <table class="hours-table">
+            <tr><td>Lundi – Vendredi</td><td><strong>[HORAIRES À RENSEIGNER]</strong></td></tr>
+            <tr><td>Samedi</td><td><strong>[HORAIRES À RENSEIGNER]</strong></td></tr>
+            <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+          </table>
+          <div style="margin-top:1.5rem;padding:1rem 1.2rem;background:linear-gradient(135deg,var(--blue),var(--blue-mid));border-radius:8px;color:#fff">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem">Livraison express</div>
+            <div style="font-size:.9rem;opacity:.85">Commandes passées avant <strong style="color:#fff">16h</strong> → livrées le lendemain matin</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:280px">
+          <iframe
+            src="https://maps.google.com/maps?q=8+rue+de+Prony+37300+Joué+lès+Tours&output=embed&z=15"
+            width="100%" height="300"
+            style="border:0;border-radius:10px;display:block"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="EUROGAM – 8 rue de Prony, Joué-lès-Tours">
+          </iframe>
+          <a href="https://www.google.com/maps?q=8+rue+de+Prony,+37300+Joué-lès-Tours" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);text-decoration:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            Obtenir l'itinéraire Google Maps
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : MENTIONS LÉGALES ══ -->
+<div id="page-mentions" class="page">
+  <section class="page-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Informations légales</div>
+      <h1 class="section-title" style="color:#fff;margin:0">Mentions Légales & Confidentialité</h1>
+    </div>
+  </section>
+  <section class="legal">
+    <div class="container">
+      <div class="legal-content">
+
+        <div class="legal-section">
+          <h3>1. Éditeur du site</h3>
+          <p><strong>EUROGAM</strong><br>
+          8 rue de Prony, 37300 Joué-lès-Tours<br>
+          Téléphone : [NUMÉRO DE TÉLÉPHONE À RENSEIGNER]<br>
+          Email : <a href="mailto:[EMAIL À RENSEIGNER]" style="color:var(--orange)">[ADRESSE EMAIL À RENSEIGNER]</a><br>
+          Directeur de la publication : [NOM DU RESPONSABLE À RENSEIGNER]</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>2. Hébergement</h3>
+          <p>Ce site est hébergé par [NOM DE L'HÉBERGEUR À RENSEIGNER], dont le siège social est situé à [ADRESSE DE L'HÉBERGEUR À RENSEIGNER].</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>3. Propriété intellectuelle</h3>
+          <p>L'ensemble des éléments composant ce site (textes, images, logos, structure, design, code source) sont la propriété exclusive d'EUROGAM ou de ses partenaires et sont protégés par le droit de la propriété intellectuelle.</p>
+          <p>Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit et sur quelque support que ce soit, est interdite sans l'autorisation écrite préalable d'EUROGAM.</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>4. Politique de confidentialité & Protection des données (RGPD)</h3>
+
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucune collecte de données à fins marketing</div><br>
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucun cookie de suivi ou de traçage</div><br>
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucun outil d'analyse d'audience (Google Analytics ou équivalent)</div>
+
+          <p style="margin-top:1rem"><strong>Ce site ne collecte aucune donnée personnelle à des fins commerciales ou marketing.</strong></p>
+
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--blue);margin:1.2rem 0 .5rem;text-transform:uppercase">4.1 Données collectées via le formulaire de contact</h4>
+          <p>Les données que vous saisissez dans le formulaire de contact (nom, prénom, entreprise, email, téléphone, message) sont collectées <strong>uniquement</strong> dans le but de répondre à votre demande. Ces données sont :</p>
+          <ul style="font-size:.9rem;color:var(--gray-dark);line-height:1.8;padding-left:1.2rem">
+            <li>Utilisées exclusivement pour le traitement de votre demande ou votre demande de devis</li>
+            <li>Jamais cédées, revendues ou transmises à des tiers</li>
+            <li>Jamais utilisées à des fins publicitaires ou de prospection commerciale</li>
+            <li>Conservées pendant la durée strictement nécessaire au traitement de votre demande</li>
+          </ul>
+
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--blue);margin:1.2rem 0 .5rem;text-transform:uppercase">4.2 Cookies et traceurs</h4>
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucun cookie de traçage ou d'analyse</div>
+          <p style="margin-top:.8rem">Ce site <strong>n'utilise aucun cookie de traçage, de profilage ou de mesure d'audience</strong>. Aucun outil tel que Google Analytics, Facebook Pixel, ou tout équivalent n'est intégré à ce site.</p>
+          <p>Des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés (ex. : mémorisation des préférences de navigation). Ces cookies ne collectent aucune donnée personnelle identifiable et ne nécessitent pas votre consentement au sens du RGPD.</p>
+
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--blue);margin:1.2rem 0 .5rem;text-transform:uppercase">4.3 Vos droits</h4>
+          <p>Conformément au Règlement Général sur la Protection des Données (RGPD – Règlement UE 2016/679) et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles :</p>
+          <ul style="font-size:.9rem;color:var(--gray-dark);line-height:1.8;padding-left:1.2rem">
+            <li><strong>Droit d'accès</strong> : obtenir une copie de vos données</li>
+            <li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
+            <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+            <li><strong>Droit à la limitation</strong> : limiter le traitement de vos données</li>
+            <li><strong>Droit d'opposition</strong> : vous opposer à tout traitement</li>
+            <li><strong>Droit à la portabilité</strong> : récupérer vos données dans un format lisible</li>
+          </ul>
+          <p style="margin-top:.8rem">Pour exercer ces droits, contactez-nous : <a href="mailto:contact@eurogam.fr" style="color:var(--orange);font-weight:600">contact@eurogam.fr</a></p>
+          <p>Vous pouvez également introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--orange)">www.cnil.fr</a></p>
+        </div>
+
+        <div class="legal-section">
+          <h3>5. Limitation de responsabilité</h3>
+          <p>EUROGAM s'efforce de maintenir les informations publiées sur ce site à jour et exactes. Cependant, EUROGAM ne peut garantir l'exactitude, la complétude ou la mise à jour de toutes les informations diffusées sur ce site.</p>
+          <p>EUROGAM ne saurait être tenu responsable des dommages directs ou indirects résultant de l'accès au site ou de l'utilisation des informations qui y figurent, y compris l'indisponibilité du site, des intrusions extérieures, la présence de virus informatiques ou tout autre problème technique.</p>
+          <p>Les liens hypertextes présents sur le site peuvent renvoyer vers des sites extérieurs. EUROGAM décline toute responsabilité quant au contenu de ces sites tiers.</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>6. Droit applicable</h3>
+          <p>Le présent site et les présentes mentions légales sont soumis au droit français. En cas de litige, les tribunaux compétents de Joué-lès-Tours (Indre-et-Loire) seront seuls compétents.</p>
+          <p style="font-size:.8rem;color:var(--gray-mid);margin-top:1rem">Dernière mise à jour : Avril 2025</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="logo-area" href="#" onclick="showPage('accueil')" style="text-decoration:none;display:inline-flex">
+          <img src="images/logo.jpg" alt="EUROGAM – Pièces autos pour les pros – Joué les Tours" class="footer-logo-img">
+          <span class="logo">EURO<span>GAM</span></span>
+        </a>
+        <p class="footer-desc">Distributeur de pièces automobiles pour professionnels.<br>8 rue de Prony — 37300 Joué-lès-Tours</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('accueil')">Accueil</a></li>
+          <li><a href="#" onclick="showPage('produits')">Produits</a></li>
+          <li><a href="#" onclick="showPage('offres')">Offres du moment</a></li>
+          <li><a href="#" onclick="showPage('equipe')">Équipe</a></li>
+          <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
+          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Marques</h4>
+        <ul><li><a href="#">Bosch</a></li><li><a href="#">Sasic</a></li><li><a href="#">Dayco</a></li><li><a href="#">Mahle</a></li><li><a href="#">Cevam</a></li><li><a href="#">SBS</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul><li><a href="#" onclick="showPage('mentions')">Mentions légales</a></li><li><a href="#" onclick="showPage('mentions')">Politique de confidentialité</a></li><li><a href="#" onclick="showPage('mentions')">Cookies</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 EUROGAM – Joué-lès-Tours (37)</span>
+      <span>pièces auto Joué-lès-Tours · distributeur pièces auto · Bosch · Mahle · Dayco · Sasic · Cevam · SBS</span>
+    </div>
+  </div>
+</footer>
+ 
+
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Retour en haut">↑</button>
+<script src="js/app.js"></script>
+</body>
+</html>
