@@ -15,7 +15,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"EUROGAM","description":"Distributeur de pièces automobiles pour professionnels à Joué-lès-Tours.","address":{"@type":"PostalAddress","addressLocality":"Joué-lès-Tours","addressRegion":"Indre-et-Loire","addressCountry":"FR"},"telephone":"02 47 73 96 65","email":"contact@eurogam.fr","openingHours":["Mo-Fr 07:30-18:00","Sa 08:00-12:00"],"areaServed":"Centre-Val de Loire"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"EUROGAM","description":"Distributeur de pièces automobiles pour professionnels à Joué-lès-Tours.","address":{"@type":"PostalAddress","addressLocality":"Joué-lès-Tours","addressRegion":"Indre-et-Loire","addressCountry":"FR"},"telephone":"02 47 73 96 65","email":"contact@eurogam.fr","openingHours":["Mo-Fr 07:30-18:00","Sa 08:00-12:00"],"areaServed":"Centre-Val de Loire"}
+/* ════ MENU MOBILE ════ */
+function toggleMobileMenu(){
+  const menu = document.getElementById('mobile-menu');
+  const btn  = document.getElementById('burger-btn');
+  if(!menu || !btn) return;
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function navMobile(page){
+  showPage(page);
+  const menu = document.getElementById('mobile-menu');
+  const btn  = document.getElementById('burger-btn');
+  if(menu) menu.classList.remove('open');
+  if(btn)  btn.classList.remove('open');
+}
+
+</script>
   <style>
 
 :root{--blue:#1a3a5c;--blue-mid:#1e4d7b;--blue-light:#2563a8;--orange:#f07010;--orange-dark:#d45f00;--orange-light:#ff8c30;--white:#ffffff;--off-white:#f5f7fa;--gray-light:#e8ecf1;--gray-mid:#9aa5b4;--gray-dark:#4a5568;--text:#1a2332}
@@ -80,6 +97,2400 @@ nav{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:cente
 .hero-sub{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.65;margin-bottom:2rem;max-width:480px}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
 .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:1.4rem;text-align:center;backdrop-filter:blur(4px);transition:all .2s}
+.stat-card:hover{background:rgba(255,255,255,.1);border-color:var(--orange)}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:900;color:var(--orange);line-height:1}
+.stat-label{color:rgba(255,255,255,.65);font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-top:.3rem}
+ 
+/* BUTTONS */
+.btn-primary{background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border:none;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .22s;box-shadow:0 4px 16px rgba(240,112,16,.35)}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(240,112,16,.45)}
+.btn-secondary{background:transparent;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border:2px solid rgba(255,255,255,.35);border-radius:4px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .22s}
+.btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+ 
+/* COUNTERS */
+.counters-section{background:var(--blue);padding:3.5rem 0}
+.counters-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.counter-item{position:relative}
+.counter-item::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,.1)}
+.counter-item:last-child::after{display:none}
+.counter-num{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--orange);line-height:1;display:block}
+.counter-label{color:rgba(255,255,255,.65);font-size:.85rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-top:.4rem}
+ 
+/* SECTIONS */
+section{padding:5rem 0}
+.container{max-width:1280px;margin:0 auto;padding:0 2rem}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem}
+.section-title{font-size:2.6rem;font-weight:800;color:var(--blue);text-transform:uppercase;line-height:1.05;margin-bottom:1.2rem}
+.section-sub{color:var(--gray-dark);font-size:1.05rem;line-height:1.7;max-width:600px;margin-bottom:3rem}
+ 
+/* ADVANTAGES */
+.advantages{background:var(--off-white)}
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.adv-card{background:#fff;border-radius:8px;padding:2rem 1.6rem;border-left:4px solid var(--orange);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s}
+.adv-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.1)}
+.adv-icon{font-size:2rem;margin-bottom:1rem}
+.adv-title{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem}
+.adv-text{font-size:.88rem;color:var(--gray-dark);line-height:1.6}
+ 
+/* PRODUCTS */
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.product-card{background:var(--blue);border-radius:8px;padding:2rem;position:relative;overflow:hidden;cursor:pointer;transition:all .25s}
+.product-card::after{content:'';position:absolute;bottom:0;right:0;width:80px;height:80px;background:var(--orange);border-radius:50%;transform:translate(30px,30px);opacity:.25;transition:all .3s}
+.product-card:hover{background:var(--blue-mid);transform:translateY(-3px)}
+.product-card:hover::after{opacity:.5;transform:translate(20px,20px) scale(1.2)}
+.product-icon{font-size:2.4rem;margin-bottom:1rem}
+.product-name{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:.5rem}
+.product-desc{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5}
+ 
+/* BRANDS CAROUSEL */
+.brands{background:var(--blue);overflow:hidden}
+.brands .section-title{color:#fff}
+.brands .section-sub{color:rgba(255,255,255,.6)}
+.brands-carousel-wrap{overflow:hidden;position:relative;margin-top:2rem;padding:.5rem 0}
+.brands-carousel-wrap::before,.brands-carousel-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2}
+.brands-carousel-wrap::before{left:0;background:linear-gradient(to right,var(--blue),transparent)}
+.brands-carousel-wrap::after{right:0;background:linear-gradient(to left,var(--blue),transparent)}
+.brands-carousel{display:flex;gap:1.5rem;animation:slide-brands 20s linear infinite;width:max-content}
+.brands-carousel:hover{animation-play-state:paused}
+@keyframes slide-brands{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.brand-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:1.8rem 2.2rem;text-align:center;transition:all .22s;min-width:180px;flex-shrink:0}
+.brand-card:hover{background:rgba(255,255,255,.13);border-color:var(--orange);transform:translateY(-3px)}
+.brand-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;color:#fff;letter-spacing:.04em;display:block;margin-bottom:.5rem}
+.brand-desc{font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase}
+ 
+/* OFFRES PREVIEW */
+.offres-preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.offre-card{background:#fff;border-radius:10px;overflow:hidden;border:2px solid transparent;box-shadow:0 2px 10px rgba(0,0,0,.07);transition:border-color .25s,transform .25s,box-shadow .25s}
+.offre-card:hover{border-color:var(--orange);transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.offre-img{height:120px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.offre-img::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,.03) 10px,rgba(255,255,255,.03) 20px)}
+.offre-badge-promo{position:absolute;top:.6rem;right:.6rem;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .5rem;border-radius:3px}
+.offre-body{padding:1rem 1.2rem 1.2rem}
+.offre-slogan{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;color:var(--blue);text-transform:uppercase;margin-bottom:.4rem;line-height:1.2}
+.offre-desc{font-size:.78rem;color:var(--gray-dark);line-height:1.5;margin-bottom:.8rem}
+.offre-cta{display:inline-flex;align-items:center;gap:.35rem;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .9rem;border-radius:4px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.offre-cta:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.offres-voir-plus{text-align:center;margin-top:1.5rem}
+ 
+/* OFFRES FULL */
+.offres-grid-full{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
+.offre-card-full{background:#fff;border-radius:10px;overflow:hidden;border:2px solid var(--gray-light);box-shadow:0 2px 12px rgba(0,0,0,.07);transition:border-color .25s,transform .25s,box-shadow .25s}
+.offre-card-full:hover{border-color:var(--orange);transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,.12)}
+.offre-full-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
+.offre-full-img::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,.03) 10px,rgba(255,255,255,.03) 20px)}
+.offre-full-body{padding:1.2rem 1.5rem 1.5rem}
+.offre-full-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .6rem;border-radius:3px;margin-bottom:.6rem}
+.offre-full-slogan{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:800;color:var(--blue);text-transform:uppercase;line-height:1.15;margin-bottom:.6rem}
+.offre-full-desc{font-size:.82rem;color:var(--gray-dark);line-height:1.6;margin-bottom:1rem}
+.offre-full-actions{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}
+ 
+/* ADMIN */
+.admin-trigger{display:block;text-align:center;margin-top:3rem;color:rgba(0,0,0,.18);font-size:.75rem;cursor:pointer;font-family:'Barlow',sans-serif;transition:color .2s;text-decoration:none}
+.admin-trigger:hover{color:var(--gray-mid)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:#fff;border-radius:10px;padding:2.5rem;max-width:400px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.modal-title{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--blue);text-transform:uppercase;margin-bottom:.4rem}
+.modal-sub{font-size:.82rem;color:var(--gray-mid);margin-bottom:1.5rem}
+.modal-input{width:100%;padding:.8rem 1rem;border:2px solid var(--gray-light);border-radius:5px;font-size:.9rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color .2s;margin-bottom:.5rem}
+.modal-input:focus{border-color:var(--blue)}
+.modal-err{color:#c0392b;font-size:.8rem;margin-bottom:.8rem;display:none}
+.modal-btns{display:flex;gap:.8rem;margin-top:1rem}
+.modal-cancel{background:var(--gray-light);color:var(--gray-dark);border:none;padding:.7rem 1.2rem;border-radius:4px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:background .2s}
+.modal-cancel:hover{background:#d1d5db}
+.admin-panel{display:none;background:var(--off-white);border-radius:10px;padding:2rem;margin-top:2rem;border:2px solid var(--orange)}
+.admin-panel.open{display:block}
+.admin-panel h3{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:800;color:var(--blue);text-transform:uppercase;margin-bottom:1.5rem}
+.admin-row{background:#fff;border-radius:8px;padding:1.2rem;margin-bottom:1rem;border:1px solid var(--gray-light);display:flex;flex-direction:column;gap:.7rem}
+.admin-row-top{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:center}
+.admin-row-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.7rem}
+.admin-row-image{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;align-items:center}
+.admin-row input,.admin-row textarea,.admin-row select{padding:.5rem .7rem;border:1px solid var(--gray-light);border-radius:4px;font-size:.82rem;font-family:'Barlow',sans-serif;outline:none;width:100%;transition:border-color .18s}
+.admin-row input:focus,.admin-row textarea:focus{border-color:var(--blue)}
+.admin-row textarea{height:56px;resize:none}
+.admin-del{background:#fee2e2;color:#c0392b;border:none;width:32px;height:32px;border-radius:4px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.admin-del:hover{background:#fca5a5}
+/* drag handle */
+.admin-handle{cursor:grab;color:var(--gray-mid);font-size:1.2rem;padding:.4rem;user-select:none;flex-shrink:0;border-radius:4px;transition:background .2s}
+.admin-handle:hover{background:var(--gray-light);color:var(--blue)}
+.admin-handle:active{cursor:grabbing}
+/* order buttons */
+.admin-order-btns{display:flex;flex-direction:column;gap:3px;flex-shrink:0}
+.admin-btn-order{background:var(--gray-light);border:none;width:26px;height:22px;border-radius:3px;cursor:pointer;font-size:.7rem;display:flex;align-items:center;justify-content:center;transition:background .18s,transform .15s;line-height:1}
+.admin-btn-order:hover{background:var(--blue);color:#fff;transform:scale(1.08)}
+.admin-btn-order:disabled{opacity:.3;cursor:default}
+/* image preview thumbnail */
+.admin-img-thumb{width:60px;height:50px;object-fit:cover;border-radius:4px;border:1px solid var(--gray-light);display:block}
+.admin-img-thumb-placeholder{width:60px;height:50px;background:var(--gray-light);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--gray-mid)}
+.admin-img-section{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.admin-img-label{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);white-space:nowrap}
+.admin-file-btn{background:var(--blue);color:#fff;border:none;padding:.35rem .7rem;border-radius:4px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;transition:background .2s;white-space:nowrap}
+.admin-file-btn:hover{background:var(--blue-mid)}
+.admin-url-input{flex:1;min-width:120px}
+/* row dragging */
+.admin-row.dragging{opacity:.45;border:2px dashed var(--orange)}
+.admin-row.drag-over{border-top:3px solid var(--orange)}
+/* section label inside admin */
+.admin-section-lbl{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-mid);margin-bottom:.2rem}
+/* accueil indicator */
+.admin-accueil-tag{display:inline-flex;align-items:center;gap:.3rem;background:#dbeafe;color:#1e40af;font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .5rem;border-radius:10px}
+.admin-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
+.btn-adm-add{background:var(--blue);color:#fff;border:none;padding:.6rem 1.2rem;border-radius:4px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:background .2s}
+.btn-adm-add:hover{background:var(--blue-mid)}
+.btn-adm-save{background:var(--orange);color:#fff;border:none;padding:.6rem 1.4rem;border-radius:4px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:background .2s}
+.btn-adm-save:hover{background:var(--orange-dark)}
+.adm-saved{color:#166534;background:#dcfce7;border:1px solid #86efac;padding:.45rem .9rem;border-radius:4px;font-size:.82rem;display:none}
+ 
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-visual{position:relative;height:400px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-mid) 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-visual::before{content:'';position:absolute;bottom:-30px;right:-30px;width:200px;height:200px;background:var(--orange);border-radius:50%;opacity:.3}
+.about-visual-text{font-family:'Barlow Condensed',sans-serif;font-size:6rem;font-weight:900;color:rgba(255,255,255,.12);text-transform:uppercase;line-height:1;text-align:center;position:relative;z-index:1}
+.about-coop-badge{position:absolute;top:1.5rem;right:1.5rem;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .7rem;border-radius:3px;z-index:2}
+.about-year{position:absolute;bottom:1.5rem;left:1.5rem;z-index:2}
+.about-year-num{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:900;color:var(--orange);line-height:1}
+.about-year-label{color:rgba(255,255,255,.6);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.about-values{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.value-item{display:flex;align-items:center;gap:1rem}
+.value-dot{width:10px;height:10px;background:var(--orange);border-radius:50%;flex-shrink:0}
+.value-text{font-size:.95rem;color:var(--gray-dark)}
+ 
+/* PRICING */
+.pricing{background:var(--off-white)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.price-card{background:#fff;border-radius:10px;padding:2.5rem 2rem;box-shadow:0 2px 16px rgba(0,0,0,.07);border:2px solid transparent;transition:all .25s;position:relative}
+.price-card:hover{border-color:var(--orange);transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.price-card.featured{background:var(--blue);border-color:var(--orange);transform:scale(1.03)}
+.price-card.featured:hover{transform:scale(1.03) translateY(-4px)}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.3rem 1rem;border-radius:20px;white-space:nowrap}
+.price-title{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;text-transform:uppercase;color:var(--blue);margin-bottom:.3rem}
+.price-card.featured .price-title{color:#fff}
+.price-sub{font-size:.82rem;color:var(--gray-mid);margin-bottom:1.5rem}
+.price-card.featured .price-sub{color:rgba(255,255,255,.55)}
+.price-amount{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:var(--orange);line-height:1;margin-bottom:1.8rem}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+.price-features li{font-size:.88rem;color:var(--gray-dark);display:flex;align-items:center;gap:.6rem}
+.price-card.featured .price-features li{color:rgba(255,255,255,.75)}
+.price-features li::before{content:'✓';color:var(--orange);font-weight:700}
+.btn-outline{display:block;text-align:center;padding:.75rem;border:2px solid var(--blue);color:var(--blue);font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .2s}
+.btn-outline:hover{background:var(--blue);color:#fff}
+.price-card.featured .btn-outline{border-color:var(--orange);color:var(--orange)}
+.price-card.featured .btn-outline:hover{background:var(--orange);color:#fff}
+ 
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.testi-card{background:var(--off-white);border-radius:8px;padding:2rem;border-top:3px solid var(--orange);transition:box-shadow .2s,transform .2s}
+.testi-card:hover{box-shadow:0 6px 22px rgba(0,0,0,.08);transform:translateY(-3px)}
+.testi-stars{color:var(--orange);font-size:1rem;margin-bottom:1rem}
+.testi-text{font-size:.92rem;color:var(--gray-dark);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.8rem}
+.testi-avatar{width:42px;height:42px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#fff;font-size:1rem}
+.testi-name{font-weight:600;font-size:.9rem;color:var(--blue)}
+.testi-role{font-size:.78rem;color:var(--gray-mid)}
+ 
+/* FAQ */
+.faq{background:var(--off-white)}
+.faq-list{display:flex;flex-direction:column;gap:1rem;max-width:800px}
+.faq-item{background:#fff;border-radius:6px;border:1px solid var(--gray-light);overflow:hidden}
+.faq-q{padding:1.2rem 1.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:var(--blue);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:background .2s}
+.faq-q:hover{background:var(--off-white)}
+.faq-q::after{content:'+';font-size:1.4rem;color:var(--orange);font-weight:300;flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;font-size:.9rem;color:var(--gray-dark);line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding:0 1.5rem 1.2rem}
+ 
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem}
+.contact-icon{width:44px;height:44px;background:var(--orange);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-label{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-mid)}
+.contact-val{font-size:.95rem;color:var(--blue);font-weight:600}
+.map-placeholder{background:var(--gray-light);height:200px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray-mid);font-size:.88rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;border:2px dashed var(--gray-mid);margin-top:1rem}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-group label{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.form-group input,.form-group select,.form-group textarea{padding:.75rem 1rem;border:2px solid var(--gray-light);border-radius:5px;font-family:'Barlow',sans-serif;font-size:.9rem;color:var(--text);background:#fff;transition:border-color .2s;outline:none;resize:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue)}
+.form-group textarea{height:100px}
+.rgpd-check{display:flex;align-items:flex-start;gap:.7rem}
+.rgpd-check input{margin-top:3px;accent-color:var(--orange)}
+.rgpd-check label{font-size:.78rem;color:var(--gray-dark);line-height:1.5}
+.form-success{display:none;background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:1rem;border-radius:5px;font-size:.9rem}
+ 
+/* ORDER */
+.order-section{background:var(--off-white)}
+.order-bar{display:flex;gap:1rem;margin-bottom:2rem;max-width:600px}
+.order-bar input{flex:1;padding:.8rem 1.2rem;border:2px solid var(--gray-light);border-radius:5px;font-size:.9rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color .2s}
+.order-bar input:focus{border-color:var(--blue)}
+.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.catalog-item{background:#fff;border-radius:8px;padding:1.5rem;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:.6rem;transition:box-shadow .2s,transform .2s}
+.catalog-item:hover{box-shadow:0 4px 18px rgba(0,0,0,.1);transform:translateY(-2px)}
+.catalog-ref{font-size:.72rem;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.catalog-name{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;color:var(--blue)}
+.catalog-brand{font-size:.8rem;color:var(--orange);font-weight:600}
+.catalog-price{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:800;color:var(--blue);margin-top:auto}
+.catalog-add{background:var(--blue);color:#fff;border:none;padding:.55rem 1rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s}
+.catalog-add:hover{background:var(--orange);transform:scale(1.02)}
+ 
+/* LEGAL */
+.legal{background:#fff}
+.legal-content{max-width:800px}
+.legal-content h3{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--blue);margin:1.8rem 0 .6rem;text-transform:uppercase}
+.legal-content p{font-size:.9rem;color:var(--gray-dark);line-height:1.7;margin-bottom:.8rem}
+ 
+/* FOOTER */
+footer{background:#0d1f33;color:rgba(255,255,255,.7)}
+.footer-top{padding:4rem 0 3rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+.footer-desc{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.5);max-width:260px;margin-top:.8rem}
+.footer-col h4{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.footer-col a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:1rem}
+ 
+/* FLOAT BTN */
+
+.float-btn:hover{background:var(--orange-dark);transform:translateY(-3px) scale(1.04);box-shadow:0 8px 28px rgba(240,112,16,.55);animation:none}
+@keyframes pulse-float{0%,100%{box-shadow:0 4px 20px rgba(240,112,16,.5)}50%{box-shadow:0 4px 30px rgba(240,112,16,.8),0 0 0 8px rgba(240,112,16,.1)}}
+ 
+/* PAGE SYSTEM */
+.page{display:none}
+.page.active{display:block}
+.page-banner{
+  position:relative;
+  min-height:220px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  /* Warehouse photo as background */
+  background-image: url('images/entrepot.png');
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+}
+/* Dark overlay for text readability */
+.page-banner::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(10,31,56,.82) 0%,rgba(26,58,92,.65) 40%,rgba(30,77,123,.45) 70%,rgba(168,68,0,.3) 100%);
+  z-index:1;
+}
+/* Orange accent slash */
+.page-banner::after{
+  content:'';
+  position:absolute;right:0;top:0;bottom:0;
+  width:35%;
+  background:linear-gradient(to left,rgba(240,112,16,.12),transparent);
+  z-index:1;
+}
+/* Content above overlays */
+.page-banner .container{
+  position:relative;
+  z-index:2;
+}
+ 
+/* RESPONSIVE */
+@media(max-width:1100px){.nav-links a{font-size:.82rem;padding:.4rem .5rem}}
+@media(max-width:900px){
+  .hero-content{grid-template-columns:1fr}.hero-stats{display:none}
+  .adv-grid{grid-template-columns:repeat(2,1fr)}
+  .products-grid,.pricing-grid,.testi-grid,.catalog-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .section-title{font-size:2rem}.hero h1{font-size:2.8rem}
+  .counters-grid{grid-template-columns:repeat(2,1fr)}
+  .offres-preview-grid,.offres-grid-full{grid-template-columns:1fr}
+  .admin-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .products-grid,.pricing-grid,.testi-grid,.adv-grid,.catalog-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}
+  .nav-links{display:none}.price-card.featured{transform:none}
+  
+  .admin-row{grid-template-columns:1fr}
+}
+
+/* ══ LOGO IMAGE ══ */
+.logo-img {
+  width: 42px; height: 42px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  padding: 3px;
+  flex-shrink: 0;
+  animation: logo-fadein 0.8s ease both;
+  transition: filter 0.3s, transform 0.3s;
+}
+.logo-area:hover .logo-img { filter: drop-shadow(0 0 8px rgba(240,112,16,0.7)); transform: scale(1.06); }
+@keyframes logo-fadein { from { opacity:0; transform: scale(0.8); } to { opacity:1; transform: scale(1); } }
+
+.footer-logo-img{
+  height:44px;
+  width:auto;
+  max-width:200px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:6px;
+  padding:5px 10px;
+  display:block;
+  margin-bottom:.8rem;
+}
+
+/* ══ HERO BACKGROUND — warehouse photo + colour overlay ══ */
+.hero { background: #0a1f38 !important; }
+
+/* Layer 0 — the warehouse photo, fixed during scroll for parallax feel */
+.hero-bg-photo {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('images/entrepot.png');
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+  will-change: transform;
+  /* subtle zoom-in on load */
+  animation: hero-photo-zoom 18s ease-out forwards;
+}
+@keyframes hero-photo-zoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.0); }
+}
+
+/* Layer 1 — rich dark blue overlay, blends the photo into the brand palette */
+.hero-bg-anim {
+  position: absolute; inset: 0; z-index: 1;
+  /* deep blue left → transparent centre → orange hint right, animated */
+  background: linear-gradient(
+    105deg,
+    rgba(10,31,56,0.78)   0%,
+    rgba(26,58,92,0.60)  35%,
+    rgba(30,77,123,0.40) 60%,
+    rgba(168,68,0,0.28)  85%,
+    rgba(240,112,16,0.18) 100%
+  );
+  background-size: 200% 200%;
+  animation: hero-overlay-shift 12s ease infinite;
+}
+@keyframes hero-overlay-shift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* Layer 2 — subtle vignette to focus the eye on content */
+.hero-bg-vignette {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(ellipse at 30% 50%, transparent 40%, rgba(5,15,30,0.32) 100%);
+}
+
+/* Grid overlay */
+.hero-grid-overlay {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 55px 55px;
+  animation: grid-drift 25s linear infinite;
+}
+@keyframes grid-drift { 0%{transform:translateY(0)} 100%{transform:translateY(55px)} }
+
+/* Floating particles */
+.hero-particles { position:absolute; inset:0; z-index:2; overflow:hidden; pointer-events:none; }
+.hparticle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: hpart-float var(--pdur,6s) ease-in-out var(--pdelay,0s) infinite;
+}
+@keyframes hpart-float {
+  0%   { opacity:0; transform: translateY(110%) translateX(0) scale(0.4); }
+  15%  { opacity: 0.9; }
+  85%  { opacity: 0.3; }
+  100% { opacity:0; transform: translateY(-120px) translateX(var(--pdrift,20px)) scale(1.5); }
+}
+
+/* ══ HERO: z-index chain (photo → overlay → vignette → grid → particles → parallax → diag → content) ══ */
+.hero-grid-overlay { z-index: 3 !important; }
+.hero-particles    { z-index: 4 !important; }
+.hero-parallax     { z-index: 5 !important; }
+.hero-diag         { z-index: 6 !important; }
+.hero-content      { z-index: 7 !important; }
+
+/* ══ HERO BADGE PULSE ══ */
+.hero-badge {
+  animation: badge-glow 3s ease-in-out infinite;
+}
+@keyframes badge-glow {
+  0%,100% { box-shadow: 0 0 10px rgba(240,112,16,0.4); }
+  50%      { box-shadow: 0 0 26px rgba(240,112,16,0.85), 0 0 50px rgba(240,112,16,0.25); }
+}
+
+/* ══ HERO H1 entrance ══ */
+.hero h1 { animation: h1-slide 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+@keyframes h1-slide { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+.hero-sub { animation: h1-slide 0.9s 0.15s cubic-bezier(0.22,1,0.36,1) both; }
+.hero-btns { animation: h1-slide 0.9s 0.28s cubic-bezier(0.22,1,0.36,1) both; }
+
+/* ══ BUTTONS: glow + ripple ══ */
+.btn-primary {
+  position: relative; overflow: hidden;
+  transition: background 0.22s, transform 0.22s, box-shadow 0.22s !important;
+}
+.btn-primary::after {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent);
+  opacity:0; transition: opacity 0.25s;
+}
+.btn-primary:hover::after { opacity:1; }
+.btn-primary:hover {
+  background: var(--orange-dark) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 28px rgba(240,112,16,0.55), 0 0 0 5px rgba(240,112,16,0.12) !important;
+}
+.btn-primary:active { transform: translateY(-1px) !important; }
+
+/* Float btn enhanced pulse */
+@keyframes pulse-float {
+  0%,100% { box-shadow: 0 4px 20px rgba(240,112,16,.5); }
+  50%      { box-shadow: 0 4px 34px rgba(240,112,16,.85), 0 0 0 10px rgba(240,112,16,.12); }
+}
+
+/* ══ STAT CARDS hover ══ */
+.stat-card {
+  transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s !important;
+}
+.stat-card:hover {
+  background: rgba(255,255,255,0.13) !important;
+  border-color: var(--orange) !important;
+  transform: translateY(-5px) scale(1.03) !important;
+  box-shadow: 0 10px 28px rgba(240,112,16,0.22) !important;
+}
+
+/* ══ ADV CARDS ══ */
+.adv-card { transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s !important; }
+.adv-card:hover {
+  transform: translateY(-7px) scale(1.02) !important;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.13) !important;
+  border-color: var(--orange-dark) !important;
+}
+.adv-icon { display:block; transition: transform 0.3s; }
+.adv-card:hover .adv-icon { transform: scale(1.18) rotate(-6deg); }
+
+/* ══ PRODUCT CARDS ══ */
+.product-card { transition: background 0.25s, transform 0.25s, box-shadow 0.25s !important; }
+.product-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.22) !important;
+}
+.product-icon { display:block; transition: transform 0.3s; }
+.product-card:hover .product-icon { transform: scale(1.15); }
+
+/* ══ OFFRE CARDS with real images ══ */
+.offre-img-real {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.offre-img-real img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  display: block;
+}
+.offre-card:hover .offre-img-real img { transform: scale(1.06); }
+.offre-card { transition: border-color 0.28s, transform 0.28s, box-shadow 0.28s !important; }
+.offre-card:hover {
+  border-color: var(--orange) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 14px 38px rgba(0,0,0,0.13) !important;
+}
+
+/* FULL offre with real image */
+.offre-full-img-real {
+  height: 220px; overflow: hidden; position: relative;
+}
+.offre-full-img-real img {
+  width:100%; height:100%; object-fit:cover;
+  transition: transform 0.45s ease;
+  display:block;
+}
+.offre-card-full:hover .offre-full-img-real img { transform: scale(1.05); }
+.offre-card-full {
+  transition: border-color 0.28s, transform 0.28s, box-shadow 0.28s !important;
+}
+.offre-card-full:hover {
+  border-color: var(--orange) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 42px rgba(0,0,0,0.13) !important;
+}
+
+/* ══ BRAND CARD hover ══ */
+.brand-card { transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s !important; }
+.brand-card:hover {
+  background: rgba(255,255,255,0.15) !important;
+  border-color: var(--orange) !important;
+  transform: translateY(-5px) scale(1.04) !important;
+  box-shadow: 0 10px 26px rgba(240,112,16,0.2) !important;
+}
+
+/* ══ TESTI CARDS ══ */
+.testi-card { transition: box-shadow 0.25s, transform 0.25s !important; }
+.testi-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+  transform: translateY(-5px) !important;
+}
+
+/* ══ CATALOG ITEMS ══ */
+.catalog-item { transition: box-shadow 0.25s, transform 0.25s !important; }
+.catalog-item:hover {
+  box-shadow: 0 8px 26px rgba(0,0,0,0.13) !important;
+  transform: translateY(-4px) !important;
+}
+.catalog-add { transition: background 0.2s, transform 0.18s !important; }
+.catalog-add:hover { background: var(--orange) !important; transform: scale(1.04) !important; }
+
+/* ══ CONTACT ICONS ══ */
+.contact-icon { transition: transform 0.25s, box-shadow 0.25s !important; }
+.contact-item:hover .contact-icon {
+  transform: scale(1.12) rotate(-5deg) !important;
+  box-shadow: 0 4px 14px rgba(240,112,16,0.35) !important;
+}
+
+/* ══ FOOTER LINKS ══ */
+.footer-col a { transition: color 0.2s, transform 0.2s !important; display: inline-block; }
+.footer-col a:hover { color: var(--orange) !important; transform: translateX(4px) !important; }
+
+/* ══ COUNTERS nice text shadow ══ */
+.counter-num { text-shadow: 0 0 18px rgba(240,112,16,0.3); }
+
+/* ══ PAGE TRANSITIONS ══ */
+.page.active { animation: page-in 0.38s ease both; }
+@keyframes page-in { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform: translateY(0); } }
+
+/* ══ SCROLL TO TOP btn ══ */
+#scroll-top {
+  position:fixed; bottom:5.5rem; right:2rem; z-index:9998;
+  width:42px; height:42px; border-radius:50%;
+  background: var(--blue); color:#fff; border:2px solid rgba(255,255,255,0.2);
+  font-size:1.1rem; cursor:pointer; display:none; align-items:center; justify-content:center;
+  transition: all 0.25s; box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+#scroll-top.visible { display:flex; }
+#scroll-top:hover { background: var(--orange); transform: translateY(-3px); }
+
+
+/* ══ LOGO IMG ══ */
+.logo-img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:#fff;padding:3px;flex-shrink:0;transition:filter .3s,transform .3s}
+.logo-area:hover .logo-img{filter:drop-shadow(0 0 8px rgba(240,112,16,.75));transform:scale(1.07)}
+
+/* ══ FLYER CARDS — full image, no crop ══ */
+/* Preview on accueil */
+/* ══ FLYER WRAPPER — image complète, aucun crop ══ */
+/* Preview accueil */
+.offre-flyer-wrap {
+  width: 100%;
+  background: #f4f5f7;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  /* No overflow:hidden here — let the image define the height */
+  line-height: 0; /* remove phantom inline spacing */
+}
+.offre-flyer-wrap img {
+  width: 100%;
+  height: auto;         /* natural height, NO crop */
+  display: block;
+  object-fit: contain;  /* never distort */
+  max-height: 260px;    /* compact but flyer stays complete */
+  /* If image is taller than 260px it scales down proportionally */
+  transition: transform .4s ease;
+}
+.offre-card:hover .offre-flyer-wrap img { transform: scale(1.03); }
+
+/* Override: the card itself must NOT clip the image */
+.offre-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: visible !important; /* allow image to size itself */
+  border: 2px solid transparent;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07);
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  cursor: pointer;
+}
+/* We still want rounded corners on image top */
+.offre-flyer-wrap img { border-radius: 8px 8px 0 0; }
+
+.offre-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+/* ══ Full cards page offres ══ */
+.offre-full-flyer-wrap {
+  width: 100%;
+  background: #f4f5f7;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  line-height: 0;
+}
+.offre-full-flyer-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  max-height: 320px;
+  transition: transform .4s ease;
+  border-radius: 8px 8px 0 0;
+}
+.offre-card-full:hover .offre-full-flyer-wrap img { transform: scale(1.025); }
+
+.offre-card-full {
+  background: #fff;
+  border-radius: 10px;
+  overflow: visible !important;
+  border: 2px solid var(--gray-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.offre-card-full:hover {
+  border-color: var(--orange);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.12);
+}
+
+/* ══ HOVER — buttons ══ */
+.btn-primary{
+  position:relative;overflow:hidden;
+  transition:background .22s,transform .22s,box-shadow .22s!important;
+}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18),transparent);opacity:0;transition:opacity .25s}
+.btn-primary:hover::after{opacity:1}
+.btn-primary:hover{
+  background:var(--orange-dark)!important;
+  transform:translateY(-3px)!important;
+  box-shadow:0 8px 24px rgba(240,112,16,.5),0 0 0 5px rgba(240,112,16,.12)!important;
+}
+.btn-secondary:hover{border-color:#fff!important;background:rgba(255,255,255,.1)!important;transform:translateY(-2px)!important}
+
+/* ══ HOVER — stat cards ══ */
+.stat-card{transition:background .25s,border-color .25s,transform .25s,box-shadow .25s!important}
+.stat-card:hover{
+  background:rgba(255,255,255,.13)!important;
+  border-color:var(--orange)!important;
+  transform:translateY(-5px) scale(1.03)!important;
+  box-shadow:0 10px 28px rgba(240,112,16,.22)!important;
+}
+
+/* ══ HOVER — adv cards ══ */
+.adv-card{transition:transform .28s,box-shadow .28s,border-color .28s!important}
+.adv-card:hover{transform:translateY(-7px) scale(1.02)!important;box-shadow:0 14px 36px rgba(0,0,0,.12)!important}
+.adv-icon{display:block;transition:transform .3s}
+.adv-card:hover .adv-icon{transform:scale(1.2) rotate(-6deg)}
+
+/* ══ HOVER — product cards ══ */
+.product-card{transition:background .25s,transform .28s,box-shadow .28s!important}
+.product-card:hover{transform:translateY(-5px)!important;box-shadow:0 14px 36px rgba(0,0,0,.2)!important}
+.product-icon{display:block;transition:transform .3s}
+.product-card:hover .product-icon{transform:scale(1.15)}
+
+/* ══ HOVER — brand cards ══ */
+.brand-card{transition:background .25s,border-color .25s,transform .25s,box-shadow .25s!important}
+.brand-card:hover{
+  background:rgba(255,255,255,.15)!important;
+  border-color:var(--orange)!important;
+  transform:translateY(-5px) scale(1.04)!important;
+  box-shadow:0 10px 26px rgba(240,112,16,.2)!important;
+}
+
+/* ══ HOVER — testi cards ══ */
+.testi-card{transition:box-shadow .25s,transform .25s!important}
+.testi-card:hover{box-shadow:0 10px 30px rgba(0,0,0,.12)!important;transform:translateY(-5px)!important}
+
+/* ══ HOVER — catalog items ══ */
+.catalog-item{transition:box-shadow .25s,transform .25s!important}
+.catalog-item:hover{box-shadow:0 8px 26px rgba(0,0,0,.12)!important;transform:translateY(-4px)!important}
+.catalog-add{transition:background .2s,transform .18s!important}
+.catalog-add:hover{background:var(--orange)!important;transform:scale(1.04)!important}
+
+/* ══ HOVER — contact icons ══ */
+.contact-icon{transition:transform .25s,box-shadow .25s!important}
+.contact-item:hover .contact-icon{transform:scale(1.12) rotate(-5deg)!important;box-shadow:0 4px 14px rgba(240,112,16,.35)!important}
+
+/* ══ HOVER — footer links ══ */
+.footer-col a{transition:color .2s,transform .2s!important;display:inline-block}
+.footer-col a:hover{color:var(--orange)!important;transform:translateX(4px)!important}
+
+/* ══ REVEAL — scroll animations ══ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-38px);transition:opacity .6s ease,transform .6s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(38px);transition:opacity .6s ease,transform .6s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ══ PAGE transition ══ */
+.page.active{animation:page-in .35s ease both}
+@keyframes page-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══ FLOAT btn pulse ══ */
+@keyframes pulse-float{
+  0%,100%{box-shadow:0 4px 20px rgba(240,112,16,.5)}
+  50%{box-shadow:0 4px 32px rgba(240,112,16,.85),0 0 0 9px rgba(240,112,16,.11)}
+}
+
+/* ══ COUNTER text-shadow ══ */
+.counter-num{text-shadow:0 0 18px rgba(240,112,16,.28)}
+
+/* ══ HERO badge glow ══ */
+.hero-badge{animation:badge-glow 3.5s ease-in-out infinite}
+@keyframes badge-glow{
+  0%,100%{box-shadow:0 0 10px rgba(240,112,16,.35)}
+  50%{box-shadow:0 0 28px rgba(240,112,16,.8),0 0 50px rgba(240,112,16,.22)}
+}
+
+/* ══ LEGAL page improved ══ */
+.legal-content h3{border-left:3px solid var(--orange);padding-left:.8rem}
+.legal-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;
+  font-size:.82rem;font-weight:600;padding:.4rem .9rem;border-radius:20px;
+  margin-bottom:.8rem;
+}
+.legal-warn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:#fff7ed;border:1px solid #fdba74;color:#92400e;
+  font-size:.82rem;font-weight:600;padding:.4rem .9rem;border-radius:20px;
+  margin-bottom:.8rem;
+}
+.legal-section{margin-bottom:2rem;padding:1.5rem;background:var(--off-white);border-radius:8px}
+
+
+/* ══ CONTACT PAGE — cards layout ══ */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media(max-width:900px){ .contact-cards-grid { grid-template-columns: 1fr; } }
+
+.contact-big-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  border: 2px solid var(--gray-light);
+  border-radius: 12px;
+  padding: 2rem;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 2px 14px rgba(0,0,0,.06);
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  cursor: pointer;
+}
+.contact-big-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.11);
+}
+.contact-big-card--orange { border-color: rgba(240,112,16,.25); }
+.contact-big-card--orange:hover { border-color: var(--orange); }
+
+.contact-big-icon {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.contact-big-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: .4rem;
+}
+.contact-big-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+.contact-big-hint {
+  font-size: .82rem;
+  color: var(--gray-dark);
+  line-height: 1.5;
+  flex: 1;
+}
+.contact-big-action {
+  margin-top: 1.2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+/* contact bottom row */
+.contact-bottom {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.contact-hours-block { flex-shrink: 0; min-width: 260px; }
+
+/* hours table */
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+.hours-table td {
+  padding: .55rem .6rem;
+  border-bottom: 1px solid var(--gray-light);
+  color: var(--gray-dark);
+}
+.hours-table td:last-child { text-align: right; color: var(--blue); }
+.hours-table tr.closed td { color: var(--gray-mid); opacity: .7; }
+.hours-table tr:last-child td { border-bottom: none; }
+
+
+/* ══ ÉQUIPE PAGE ══ */
+.equipe-grid { display: flex; flex-direction: column; gap: 0; }
+
+.equipe-section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: .3rem 0 .8rem;
+  border-bottom: 2px solid var(--gray-light);
+  margin-bottom: 1rem;
+}
+
+.equipe-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.2rem 1.4rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid var(--gray-light);
+  margin-bottom: .8rem;
+  transition: border-color .22s, transform .22s, box-shadow .22s;
+}
+.equipe-card:hover {
+  border-color: var(--orange);
+  transform: translateX(5px);
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+.equipe-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: .04em;
+  box-shadow: 0 3px 10px rgba(26,58,92,.25);
+}
+
+.equipe-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--blue);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: .2rem;
+}
+.equipe-poste {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+.equipe-desc {
+  font-size: .83rem;
+  color: var(--gray-dark);
+  line-height: 1.55;
+}
+
+@media(max-width:600px){
+  .equipe-card { flex-direction: column; }
+  .equipe-avatar { width:44px; height:44px; font-size:.9rem; }
+}
+
+
+/* ══ PLACEHOLDER AVATAR ══ */
+.equipe-avatar--placeholder {
+  background: linear-gradient(135deg, #d1d5db, #9ca3af) !important;
+  font-size: 1.4rem !important;
+  color: rgba(255,255,255,.7) !important;
+  border: 2px dashed rgba(255,255,255,.4) !important;
+}
+
+/* ══ LOGO sizing on mobile ══ */
+@media(max-width:600px){
+  .logo-full { height:40px; padding:4px 7px; }
+}
+
+
+/* ══ ICON SIZING ══ */
+.adv-icon svg { width:30px; height:30px; stroke:var(--orange); display:block; margin-bottom:.3rem; }
+.product-icon svg { width:38px; height:38px; stroke:rgba(255,255,255,.82); display:block; margin-bottom:.6rem; transition:stroke .3s, transform .3s; }
+.product-card:hover .product-icon svg { stroke:var(--orange-light); transform:scale(1.1); }
+
+/* ══ STAR RATINGS ══ */
+.testi-stars { letter-spacing:.15em; margin-bottom:1rem; }
+.star-fill  { color:var(--orange); }
+.star-empty { color:var(--gray-light); }
+
+/* ══ CONTACT ICONS ══ */
+.contact-big-icon {
+  width:56px; height:56px;
+  background:rgba(240,112,16,.08);
+  border:1.5px solid rgba(240,112,16,.22);
+  border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:1.2rem;
+  transition:background .25s, border-color .25s;
+}
+.contact-big-card:hover .contact-big-icon {
+  background:rgba(240,112,16,.16);
+  border-color:var(--orange);
+}
+
+
+/* ══ CATALOGUE PRODUITS — cartes catégories ══ */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+@media(max-width:1000px){ .cat-grid{ grid-template-columns: repeat(2,1fr); } }
+@media(max-width:580px){  .cat-grid{ grid-template-columns: 1fr; } }
+
+.cat-card {
+  background: #fff;
+  border: 2px solid var(--gray-light);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  display: flex;
+  flex-direction: column;
+}
+.cat-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.10);
+}
+
+/* Zone image */
+.cat-img-zone {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: var(--blue);
+  position: relative;
+  flex-shrink: 0;
+}
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.cat-card:hover .cat-img { transform: scale(1.05); }
+
+/* Placeholder quand pas d'image */
+.cat-img-zone--empty {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cat-img-placeholder svg {
+  width: 48px;
+  height: 48px;
+  stroke: rgba(255,255,255,.45);
+}
+
+/* Contenu de la carte */
+.cat-body {
+  padding: 1.2rem 1.3rem 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.cat-icon-row {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.cat-icon-row svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--orange);
+  flex-shrink: 0;
+}
+.cat-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  line-height: 1.1;
+}
+.cat-desc {
+  font-size: .8rem;
+  color: var(--gray-dark);
+  line-height: 1.55;
+  flex: 1;
+}
+.cat-marques {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-top: .2rem;
+}
+.cat-marque {
+  display: inline-block;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  color: var(--blue);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  transition: background .2s, border-color .2s;
+}
+.cat-card:hover .cat-marque {
+  background: rgba(240,112,16,.08);
+  border-color: rgba(240,112,16,.3);
+}
+
+
+  
+/* ══ BURGER — 3 traits ══ */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  z-index: 1001;
+}
+.burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform .28s ease, opacity .28s ease;
+}
+/* Animation croix quand ouvert */
+.burger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ══ RESPONSIVE MOBILE ══ */
+@media(max-width:768px){
+  .nav-links { display: none !important; }
+  .burger { display: flex !important; }
+  /* Contact */
+  .contact-bottom { flex-direction: column; gap: 1.5rem; }
+  .contact-hours-block { min-width: 0; width: 100%; overflow-x: auto; }
+  /* Offres */
+  .offres-preview-grid { grid-template-columns: 1fr; }
+  .offres-grid-full { grid-template-columns: 1fr; }
+  /* Contact cards */
+  .contact-cards-grid { grid-template-columns: 1fr; }
+  /* About */
+  .about-grid { grid-template-columns: 1fr; }
+}
+.testi-pending-note{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-mid);border-top:1px solid var(--gray-light);padding-top:.7rem;margin-top:.5rem}
+.cat-marques-label{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-mid);margin-top:.6rem;margin-bottom:.2rem}
+
+/* ══ MENU MOBILE DÉROULANT ══ */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--blue);
+  border-top: 1px solid rgba(255,255,255,.1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  padding: .4rem 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  display: block;
+  padding: .85rem 1.5rem;
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  transition: background .2s, color .2s;
+}
+.mobile-menu a:hover { background: rgba(255,255,255,.08); color: #fff; }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mobile-cta {
+  background: var(--orange);
+  color: #fff;
+  margin: .6rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+  border-bottom: none;
+}
+.mobile-menu .mobile-cta:hover { background: var(--orange-dark); }
+
+</style>
+</head>
+<body>
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span>Livraison express 24h</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Bosch · Sasic · Dayco · Mahle · Cevam · SBS</span><span>Offres du moment – Économisez dès aujourd'hui</span><span>Livraison express 24h</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Bosch · Sasic · Dayco · Mahle · Cevam · SBS</span><span>Offres du moment – Économisez dès aujourd'hui</span>
+  </div>
+</div>
+ 
+<!-- HEADER -->
+<header>
+  <nav>
+    <a class="logo-area" href="#" onclick="showPage('accueil')">
+      <img src="logo.jpg" alt="EUROGAM – Pièces autos pour les pros – Joué les Tours" class="logo-full">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('accueil')">Accueil</a></li>
+      <li><a href="#" onclick="showPage('produits')">Produits</a></li>
+      <li><a href="#" onclick="showPage('offres')" class="nav-offres">Offres</a></li>
+      <li><a href="#" onclick="showPage('equipe')">Équipe</a></li>
+      <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
+      <li><a href="#" class="nav-cta" onclick="showPage('contact')">Nous contacter</a></li>
+    </ul>
+    <!-- Burger mobile -->
+    <button class="burger" id="burger-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <!-- Menu déroulant mobile -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#" onclick="navMobile('accueil')">Accueil</a>
+    <a href="#" onclick="navMobile('produits')">Produits</a>
+    <a href="#" onclick="navMobile('offres')">Offres du moment</a>
+    <a href="#" onclick="navMobile('equipe')">Équipe</a>
+    <a href="#" onclick="navMobile('apropos')">À propos</a>
+    <a href="#" onclick="navMobile('contact')" class="mobile-cta">Nous contacter</a>
+  </div>
+</header>
+ 
+<!-- FLOATING BUTTON -->
+
+ 
+<!-- ADMIN MODAL -->
+<div class="modal-overlay" id="admin-modal" onclick="if(event.target===this)closeAdminModal()">
+  <div class="modal-box">
+    <div class="modal-title">Accès Administrateur</div>
+    <div class="modal-sub">Entrez le mot de passe pour gérer les offres du moment.</div>
+    <input type="password" class="modal-input" id="admin-pwd" placeholder="Mot de passe…" onkeydown="if(event.key==='Enter')checkAdminPwd()">
+    <div class="modal-err" id="admin-err">Mot de passe incorrect. Veuillez réessayer.</div>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeAdminModal()">Annuler</button>
+      <button class="btn-primary" onclick="checkAdminPwd()">Accéder →</button>
+    </div>
+  </div>
+</div>
+ 
+<!-- ══ PAGE : ACCUEIL ══ -->
+<div id="page-accueil" class="page active">
+  <section class="hero">
+
+    <!-- Layer 0: warehouse photo -->
+    <div class="hero-bg-photo"></div>
+    <!-- Layer 1: animated colour overlay (brand palette blended over photo) -->
+    <div class="hero-bg-anim"></div>
+    <!-- Layer 2: vignette -->
+    <div class="hero-bg-vignette"></div>
+    <!-- Layer 3: grid -->
+    <div class="hero-grid-overlay"></div>
+    <!-- Layer 4: floating particles / embers -->
+    <div class="hero-particles" id="hero-particles"></div>
+    <!-- Layer 5: parallax pattern -->
+    <div class="hero-parallax" id="parallax-bg"></div>
+    <!-- Layer 6: diagonal orange accent -->
+    <div class="hero-diag"></div>
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge">Distributeur de pièces auto · Joué-lès-Tours · 37</div>
+        <h1>Votre partenaire <em>pièces auto</em> de confiance</h1>
+        <p class="hero-sub">EUROGAM fournit les garages et professionnels de l'automobile en pièces multimarques. Rapidité de livraison, réactivité et expertise au service de votre activité.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary" onclick="showPage('contact')">Nous contacter</a>
+          <a href="#" class="btn-secondary" onclick="showPage('contact')">Demander un devis</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-num">24h</div><div class="stat-label">Délai de livraison</div></div>
+        <div class="stat-card"><div class="stat-num">40+</div><div class="stat-label">Ans d'expertise</div></div>
+        <div class="stat-card"><div class="stat-num">500+</div><div class="stat-label">Références disponibles</div></div>
+        <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Marques premium</div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- COMPTEURS ANIMÉS -->
+  <section class="counters-section">
+    <div class="container">
+      <div class="counters-grid">
+        <div class="counter-item reveal"><span class="counter-num" data-target="40" data-suffix="+">0</span><div class="counter-label">Années d'expérience</div></div>
+        <div class="counter-item reveal d1"><span class="counter-num" data-target="500" data-suffix="+">0</span><div class="counter-label">Références produits</div></div>
+        <div class="counter-item reveal d2"><span class="counter-num" data-target="6" data-suffix="">0</span><div class="counter-label">Marques partenaires</div></div>
+        <div class="counter-item reveal d3"><span class="counter-num" data-target="300" data-suffix="+">0</span><div class="counter-label">Clients professionnels satisfaits</div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="advantages">
+    <div class="container">
+      <div class="section-label reveal">Pourquoi EUROGAM</div>
+      <h2 class="section-title reveal">Des avantages concrets<br>pour votre garage</h2>
+      <div class="adv-grid">
+        <div class="adv-card reveal d1"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="adv-title">Livraison Express</div><p class="adv-text">Pièces disponibles en 24h. Réduisez le temps d'immobilisation des véhicules et augmentez votre rentabilité.</p></div>
+        <div class="adv-card reveal d2"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg></div><div class="adv-title">Proximité Locale</div><p class="adv-text">Ancré à Joué-lès-Tours, nous connaissons les besoins des professionnels de la région Centre-Val de Loire.</p></div>
+        <div class="adv-card reveal d3"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="adv-title">Marques de Référence</div><p class="adv-text">Bosch, Sasic, Dayco, Mahle, Cevam, SBS : uniquement des équipementiers reconnus pour leurs standards de qualité.</p></div>
+        <div class="adv-card reveal d4"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 6v2M12 16v2M8 12h8"/></svg></div><div class="adv-title">Tarifs Professionnels</div><p class="adv-text">Modèle coopératif = économies reversées. Des prix compétitifs adaptés aux volumes des professionnels.</p></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- OFFRES PREVIEW -->
+  <section>
+    <div class="container">
+      <div class="section-label reveal">Promotions en cours</div>
+      <h2 class="section-title reveal">Offres du moment</h2>
+      <p class="section-sub reveal">Profitez de nos offres exclusives réservées aux professionnels. Renouvelées régulièrement.</p>
+      <div class="offres-preview-grid" id="offres-preview-container"></div>
+      <div class="offres-voir-plus reveal"><a href="#" class="btn-primary" onclick="showPage('offres')">Voir toutes les offres →</a></div>
+    </div>
+  </section>
+ 
+  <!-- MARQUES CAROUSEL -->
+  <section class="brands">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Nos Marques</div>
+      <h2 class="section-title reveal">Partenaires de confiance</h2>
+      <p class="section-sub reveal">6 marques de référence mondiale — distribuées exclusivement par EUROGAM pour garantir qualité et disponibilité.</p>
+    </div>
+    <div class="brands-carousel-wrap">
+      <div class="brands-carousel">
+        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Électronique & moteur</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission</div></div>
+        <div class="brand-card"><span class="brand-logo-text">DAYCO</span><div class="brand-desc">Distribution</div></div>
+        <div class="brand-card"><span class="brand-logo-text">MAHLE</span><div class="brand-desc">Filtration & thermique</div></div>
+        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Électricité auto</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SBS</span><div class="brand-desc">Freinage</div></div>
+        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Électronique & moteur</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission</div></div>
+        <div class="brand-card"><span class="brand-logo-text">DAYCO</span><div class="brand-desc">Distribution</div></div>
+        <div class="brand-card"><span class="brand-logo-text">MAHLE</span><div class="brand-desc">Filtration & thermique</div></div>
+        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Électricité auto</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SBS</span><div class="brand-desc">Freinage</div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="container">
+      <div class="section-label reveal">Ce qu'ils disent</div>
+      <h2 class="section-title reveal">Témoignages clients</h2>
+      <div class="testi-grid">
+        <div class="testi-card reveal d1"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span></div><p class="testi-text">« Avec EUROGAM, les pièces arrivent le lendemain matin. Pour notre atelier, c'est indispensable. Fini les véhicules immobilisés faute de pièces ! »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div></div>
+        <div class="testi-card reveal d2"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span></div><p class="testi-text">« Excellent service, équipe réactive et catalogue très complet. Les prix sont vraiment adaptés aux professionnels. Je recommande sans hésiter. »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div></div>
+        <div class="testi-card reveal d3"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-empty">★</span></div><p class="testi-text">« Fiabilité au rendez-vous depuis 5 ans. La plateforme de commande est simple et les références Bosch sont toujours en stock. »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : PRODUITS ══ -->
+<div id="page-produits" class="page">
+  <section class="page-banner"><div class="container"><div class="section-label" style="color:var(--orange)">Catalogue</div><h1 class="section-title" style="color:#fff;margin:0">Nos Produits</h1></div></section>
+  <section>
+    <div class="container">
+      <p class="section-sub reveal">15 catégories de pièces automobiles multimarques pour tous types d'interventions. Marques distribuées : <strong>Bosch, Sasic, Dayco, Mahle, Cevam, SBS</strong>.</p>
+      <div class="cat-grid">
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/freinage.svg" alt="Freinage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg><div class="cat-name">Freinage</div></div>
+            <p class="cat-desc">Plaquettes, disques, étriers, maîtres-cylindres, flexibles.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">SBS</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/filtration.svg" alt="Filtration" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><div class="cat-name">Filtration</div></div>
+            <p class="cat-desc">Filtres huile, air, carburant, habitacle, urée.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Mahle</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/distribution.svg" alt="Distribution" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4z"/></svg><div class="cat-name">Distribution</div></div>
+            <p class="cat-desc">Kits courroie de distribution, chaînes, tendeurs, galets.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Dayco</span><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/suspensions.svg" alt="Suspensions" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Suspensions</div></div>
+            <p class="cat-desc">Amortisseurs, ressorts, rotules, biellettes, roulements.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/electricite.svg" alt="Électricité" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="cat-name">Électricité</div></div>
+            <p class="cat-desc">Alternateurs, démarreurs, capteurs, sondes, relais.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Cevam</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/embrayage.svg" alt="Embrayage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Embrayage</div></div>
+            <p class="cat-desc">Kits embrayage complets, volants bimasse, butées hydrauliques.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span><span class="cat-marque">Dayco</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/batteries.svg" alt="Batteries" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg><div class="cat-name">Batteries</div></div>
+            <p class="cat-desc">Batteries 12V, AGM, EFB, lithium pour véhicules start/stop.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/moteur.svg" alt="Moteur" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><div class="cat-name">Moteur</div></div>
+            <p class="cat-desc">Joints moteur, pistons, segments, thermostats, pompes à eau.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/refroidissement.svg" alt="Refroidissement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg><div class="cat-name">Refroidissement</div></div>
+            <p class="cat-desc">Radiateurs, pompes à eau, vases d'expansion, durites, ventilateurs.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/transmission.svg" alt="Transmission" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><div class="cat-name">Transmission</div></div>
+            <p class="cat-desc">Cardans, joints de transmission, différentiels, boîtes de vitesses.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/carrosserie.svg" alt="Carrosserie" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div class="cat-name">Carrosserie</div></div>
+            <p class="cat-desc">Rétroviseurs, poignées, charnières, vitres, joints de carrosserie.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/echappement.svg" alt="Échappement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg><div class="cat-name">Échappement</div></div>
+            <p class="cat-desc">Silencieux, catalyseurs, sondes lambda, flexibles d'échappement.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1">
+          <div class="cat-img-zone"><img src="images/produits/eclairage.svg" alt="Éclairage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><div class="cat-name">Éclairage</div></div>
+            <p class="cat-desc">Ampoules, phares, feux, projecteurs, ballasts xenon, LED.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d2">
+          <div class="cat-img-zone"><img src="images/produits/climatisation.svg" alt="Climatisation" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 013.96-3.28"/><path d="M14.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-3.96-3.28"/></svg><div class="cat-name">Climatisation</div></div>
+            <p class="cat-desc">Compresseurs, condenseurs, déshydrateurs, joints, fluides.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d3">
+          <div class="cat-img-zone"><img src="images/produits/vitrage.svg" alt="Vitrage & Essuyage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v10"/><path d="M8 22h8"/><path d="M2 12h20"/></svg><div class="cat-name">Vitrage & Essuyage</div></div>
+            <p class="cat-desc">Balais d'essuie-glaces, bras, moteurs, lave-glaces, joints.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE : OFFRES DU MOMENT ══ -->
+<div id="page-offres" class="page">
+  <section class="page-banner"><div class="container"><div class="section-label" style="color:var(--orange)">Promotions</div><h1 class="section-title" style="color:#fff;margin:0">Offres du Moment</h1></div></section>
+  <section>
+    <div class="container">
+      <p class="section-sub reveal">Profitez de nos offres exclusives réservées aux professionnels de l'automobile. Renouvelées régulièrement pour vous garantir les meilleures économies.</p>
+      <div class="offres-grid-full" id="offres-full-container"></div>
+      <a href="#" class="admin-trigger" onclick="openAdminModal(); return false;">⚙ Administration</a>
+      <div class="admin-panel" id="admin-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+          <h3 style="margin:0">Gérer les offres du moment</h3>
+          <div style="display:flex;align-items:center;gap:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:.75rem;color:var(--gray-mid);background:var(--gray-light);padding:.4rem .9rem;border-radius:20px">
+            🏠 Les 2 premières offres apparaissent sur l'accueil
+          </div>
+        </div>
+        <!-- hidden file input -->
+        <input type="file" id="admin-file-input" accept="image/*" style="display:none" onchange="adminHandleFileUpload(this)">
+        <div id="admin-offres-list"></div>
+        <div class="admin-actions">
+          <button class="btn-adm-add" onclick="adminAddOffre()">+ Ajouter une offre</button>
+          <button class="btn-adm-save" onclick="adminSaveOffres()">Enregistrer & Publier</button>
+          <span class="adm-saved" id="adm-saved">Offres mises à jour sur toutes les pages !</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : À PROPOS ══ -->
+<div id="page-apropos" class="page">
+  <section class="page-banner"><div class="container"><div class="section-label" style="color:var(--orange)">Notre histoire</div><h1 class="section-title" style="color:#fff;margin:0">À Propos d'EUROGAM</h1></div></section>
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 380" style="width:100%;height:100%;display:block;border-radius:10px">
+            <defs>
+              <linearGradient id="abg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a1f38"/><stop offset="100%" stop-color="#1e4d7b"/></linearGradient>
+              <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f07010"/><stop offset="100%" stop-color="#e05800"/></linearGradient>
+              <radialGradient id="gl2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f07010" stop-opacity=".2"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            </defs>
+            <rect width="480" height="380" fill="url(#abg)" rx="10"/>
+            <ellipse cx="240" cy="190" rx="200" ry="200" fill="url(#gl2)"/>
+            <rect x="30" y="60" width="8" height="280" fill="#1e4d7b" rx="3"/>
+            <rect x="30" y="90"  width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="30" y="150" width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="30" y="210" width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="30" y="270" width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="38" y="95"  width="28" height="50" rx="3" fill="#2a5298" opacity=".9"/>
+            <rect x="70" y="95"  width="28" height="50" rx="3" fill="#1e4d7b" opacity=".9"/>
+            <rect x="38" y="155" width="28" height="50" rx="3" fill="#2a5298" opacity=".9"/>
+            <rect x="70" y="155" width="22" height="50" rx="3" fill="#f07010" opacity=".7"/>
+            <rect x="38" y="215" width="28" height="50" rx="3" fill="#1e4d7b" opacity=".9"/>
+            <rect x="70" y="215" width="28" height="50" rx="3" fill="#2a5298" opacity=".9"/>
+            <rect x="442" y="60" width="8" height="280" fill="#1e4d7b" rx="3"/>
+            <rect x="350" y="90"  width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="350" y="150" width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="350" y="210" width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="350" y="270" width="100" height="5" fill="#f07010" rx="2" opacity=".8"/>
+            <rect x="356" y="95"  width="28" height="50" rx="3" fill="#f07010" opacity=".7"/>
+            <rect x="390" y="95"  width="28" height="50" rx="3" fill="#2a5298" opacity=".9"/>
+            <rect x="356" y="155" width="28" height="50" rx="3" fill="#1e4d7b" opacity=".9"/>
+            <rect x="390" y="155" width="28" height="50" rx="3" fill="#f07010" opacity=".7"/>
+            <rect x="356" y="215" width="28" height="50" rx="3" fill="#2a5298" opacity=".9"/>
+            <rect x="390" y="215" width="22" height="50" rx="3" fill="#1e4d7b" opacity=".9"/>
+            <circle cx="240" cy="175" r="70" fill="#152535" stroke="#f07010" stroke-width="5"/>
+            <circle cx="240" cy="175" r="28" fill="#0a1f38" stroke="#f07010" stroke-width="3"/>
+            <path d="M240 105 Q270 140 255 175" fill="none" stroke="#f07010" stroke-width="2.5" opacity=".7"/>
+            <path d="M300 140 Q295 175 265 195" fill="none" stroke="#f07010" stroke-width="2.5" opacity=".7"/>
+            <path d="M270 240 Q235 235 220 205" fill="none" stroke="#f07010" stroke-width="2.5" opacity=".7"/>
+            <path d="M185 230 Q180 195 205 175" fill="none" stroke="#f07010" stroke-width="2.5" opacity=".7"/>
+            <rect x="0" y="305" width="480" height="75" fill="rgba(0,0,0,.35)"/>
+            <rect x="0" y="305" width="480" height="3" fill="url(#og)"/>
+            <text x="80"  y="335" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#f07010">40+</text>
+            <text x="80"  y="355" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,.7)" letter-spacing="1">ANS D'EXPERTISE</text>
+            <line x1="160" y1="315" x2="160" y2="370" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+            <text x="240" y="335" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#f07010">6</text>
+            <text x="240" y="355" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,.7)" letter-spacing="1">MARQUES PREMIUM</text>
+            <line x1="320" y1="315" x2="320" y2="370" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+            <text x="400" y="335" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#f07010">24h</text>
+            <text x="400" y="355" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,.7)" letter-spacing="1">LIVRAISON EXPRESS</text>
+          </svg>
+        </div>
+        <div class="reveal-right">
+          <div class="section-label">Qui sommes-nous</div>
+          <h2 class="section-title">Un distributeur au service des professionnels</h2>
+          <p style="color:var(--gray-dark);font-size:.95rem;line-height:1.75;margin-bottom:1.5rem">EUROGAM est un distributeur spécialisé implanté à Joué-lès-Tours, en Indre-et-Loire. Depuis plus de 40 ans, nous fournissons des pièces automobiles multimarques aux professionnels de l'automobile de la région Centre-Val de Loire.</p>
+          <p style="color:var(--gray-dark);font-size:.95rem;line-height:1.75;margin-bottom:1.5rem">Nous plaçons l'intérêt de nos clients avant tout. Notre modèle nous permet de proposer des prix compétitifs et un service réactif, avec des investissements constants dans notre logistique et notre stock.</p>
+          <p style="color:var(--gray-dark);font-size:.95rem;line-height:1.75;margin-bottom:2rem">Notre atout majeur : la rapidité. Chaque minute d'immobilisation d'un véhicule coûte à votre garage. Notre logistique garantit une livraison en 24h.</p>
+          <div class="about-values">
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Proximité</strong> – Un ancrage local fort au cœur de la Touraine</div></div>
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Réactivité</strong> – Livraison express, réponse rapide, stock permanent</div></div>
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Fiabilité</strong> – Uniquement des marques reconnues et certifiées</div></div>
+            <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Expertise</strong> – 40 ans de connaissance du marché de la pièce auto</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="container">
+      <div class="section-label reveal">Questions fréquentes</div>
+      <h2 class="section-title reveal">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Quels sont vos délais de livraison ?</div><div class="faq-a">Nous garantissons une livraison en 24h pour les pièces en stock à Joué-lès-Tours. Pour les pièces sur commande spéciale, comptez 48 à 72h.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Comment devenir client EUROGAM ?</div><div class="faq-a">Nous travaillons avec tous les professionnels de l'automobile : garages, carrosseries, centres auto. Contactez-nous et un conseiller vous rappellera pour étudier votre situation.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Quelle zone géographique couvrez-vous ?</div><div class="faq-a">Nous livrons principalement en Indre-et-Loire (37) et dans toute la région Centre-Val de Loire. Pour les commandes importantes, des livraisons hors région sont possibles.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Proposez-vous des remises sur volume ?</div><div class="faq-a">Oui, notre modèle coopératif inclut des remises progressives selon les volumes commandés. Contactez-nous pour une grille tarifaire personnalisée.</div></div>
+        <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)">Puis-je retourner une pièce commandée par erreur ?</div><div class="faq-a">Oui, nous acceptons les retours sous 30 jours pour les pièces non montées, dans leur emballage d'origine. Contactez notre service client pour initier la procédure.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : ÉQUIPE ══ -->
+<div id="page-equipe" class="page">
+  <section class="page-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Notre équipe</div>
+      <h1 class="section-title" style="color:#fff;margin:0">L'Équipe EUROGAM</h1>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <p class="section-sub reveal" style="max-width:660px">
+        7 collaborateurs passionnés par l'automobile à votre service.
+        Experts en pièces détachées, ils sont là pour vous conseiller et vous livrer au plus vite.
+      </p>
+
+      <div class="equipe-grid" id="equipe-grid">
+        <div class="equipe-section-title reveal">Direction générale</div>
+        <div class="equipe-card reveal d1">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">Directeur Général</div>
+            <div class="equipe-desc">Pilote la stratégie et le développement d'EUROGAM.</div>
+          </div>
+        </div>
+        <div class="equipe-section-title reveal" style="margin-top:2rem">Commerce</div>
+        <div class="equipe-card reveal d1">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">Responsable Commercial</div>
+            <div class="equipe-desc">Suivi des comptes clients et développement du portefeuille.</div>
+          </div>
+        </div>
+        <div class="equipe-section-title reveal" style="margin-top:2rem">Logistique, Entrepôt &amp; Gestion</div>
+        <div class="equipe-card reveal d1">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">Magasinier</div>
+            <div class="equipe-desc">Réception, contrôle et rangement des pièces en entrepôt.</div>
+          </div>
+        </div>
+        <div class="equipe-card reveal d2">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">Magasinier</div>
+            <div class="equipe-desc">Réception, contrôle et rangement des pièces en entrepôt.</div>
+          </div>
+        </div>
+        <div class="equipe-card reveal d3">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">Magasinier</div>
+            <div class="equipe-desc">Réception, contrôle et rangement des pièces en entrepôt.</div>
+          </div>
+        </div>
+        <div class="equipe-card reveal d1">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">Responsable Comptabilité</div>
+            <div class="equipe-desc">Gestion administrative, facturation et suivi comptable.</div>
+          </div>
+        </div>
+        <div class="equipe-card reveal d2">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-poste">Préparateur de Commandes</div>
+            <div class="equipe-desc">Préparation et expédition des commandes clients.</div>
+          </div>
+        </div>
+      </div><!-- end equipe-grid -->
+
+      <!-- Note -->
+      <div class="reveal" style="margin-top:3rem;padding:1.5rem 2rem;background:linear-gradient(135deg,var(--blue),var(--blue-mid));border-radius:10px;color:#fff;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+        <div style="flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:.3rem">Vous souhaitez rejoindre l'équipe ?</div>
+          <div style="font-size:.9rem;opacity:.85">Envoyez votre candidature à <strong style="color:#fff">contact@eurogam.fr</strong> — nous recrutons des passionnés d'automobile.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+
+<!-- ══ PAGE : CONTACT ══ -->
+<div id="page-contact" class="page">
+  <section class="page-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Nous joindre</div>
+      <h1 class="section-title" style="color:#fff;margin:0">Contact</h1>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+
+      <!-- Intro -->
+      <div class="reveal" style="max-width:640px;margin-bottom:3rem">
+        <p style="font-size:1.05rem;color:var(--gray-dark);line-height:1.75">
+          Notre équipe est disponible du lundi au vendredi pour répondre à toutes vos demandes
+          de devis, d'adhésion ou d'information produit. Contactez-nous directement par téléphone,
+          email ou en passant à nos locaux.
+        </p>
+      </div>
+
+      <!-- 3 big contact cards -->
+      <div class="contact-cards-grid reveal">
+
+        <!-- Téléphone -->
+        <a href="tel:0247739665" class="contact-big-card">
+          <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="contact-big-label">Téléphone</div>
+          <div class="contact-big-val">02 47 73 96 65</div>
+          <div class="contact-big-hint">[HORAIRES À RENSEIGNER]</div>
+          <div class="contact-big-action">Appeler maintenant →</div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:[EMAIL À RENSEIGNER]" class="contact-big-card contact-big-card--orange">
+          <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></div>
+          <div class="contact-big-label">Email</div>
+          <div class="contact-big-val">[ADRESSE EMAIL À RENSEIGNER]</div>
+          <div class="contact-big-hint">Réponse sous 24h ouvrées</div>
+          <div class="contact-big-action">Envoyer un email →</div>
+        </a>
+
+        <!-- Adresse -->
+        <a href="https://www.google.com/maps?q=8+rue+de+Prony,+37300+Joué-lès-Tours" target="_blank" rel="noopener" class="contact-big-card">
+          <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-big-label">Adresse</div>
+          <div class="contact-big-val">8 rue de Prony</div>
+          <div class="contact-big-hint">37300 Joué-lès-Tours<br>Indre-et-Loire (37)</div>
+          <div class="contact-big-action">Voir sur Google Maps →</div>
+        </a>
+
+      </div>
+
+      <!-- Horaires + Map -->
+      <div class="contact-bottom reveal" style="margin-top:3rem">
+        <div class="contact-hours-block">
+          <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--blue);text-transform:uppercase;margin-bottom:1.2rem">Horaires d'ouverture</h3>
+          <table class="hours-table">
+            <tr><td>Lundi – Vendredi</td><td><strong>[HORAIRES À RENSEIGNER]</strong></td></tr>
+            <tr><td>Samedi</td><td><strong>[HORAIRES À RENSEIGNER]</strong></td></tr>
+            <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+          </table>
+          <div style="margin-top:1.5rem;padding:1rem 1.2rem;background:linear-gradient(135deg,var(--blue),var(--blue-mid));border-radius:8px;color:#fff">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem">Livraison express</div>
+            <div style="font-size:.9rem;opacity:.85">Commandes passées avant <strong style="color:#fff">16h</strong> → livrées le lendemain matin</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:280px">
+          <iframe
+            src="https://maps.google.com/maps?q=8+rue+de+Prony+37300+Joué+lès+Tours&output=embed&z=15"
+            width="100%" height="300"
+            style="border:0;border-radius:10px;display:block"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="EUROGAM – 8 rue de Prony, Joué-lès-Tours">
+          </iframe>
+          <a href="https://www.google.com/maps?q=8+rue+de+Prony,+37300+Joué-lès-Tours" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);text-decoration:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            Obtenir l'itinéraire Google Maps
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+ 
+<!-- ══ PAGE : MENTIONS LÉGALES ══ -->
+<div id="page-mentions" class="page">
+  <section class="page-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--orange)">Informations légales</div>
+      <h1 class="section-title" style="color:#fff;margin:0">Mentions Légales & Confidentialité</h1>
+    </div>
+  </section>
+  <section class="legal">
+    <div class="container">
+      <div class="legal-content">
+
+        <div class="legal-section">
+          <h3>1. Éditeur du site</h3>
+          <p><strong>EUROGAM</strong><br>
+          8 rue de Prony, 37300 Joué-lès-Tours<br>
+          Téléphone : [NUMÉRO DE TÉLÉPHONE À RENSEIGNER]<br>
+          Email : <a href="mailto:[EMAIL À RENSEIGNER]" style="color:var(--orange)">[ADRESSE EMAIL À RENSEIGNER]</a><br>
+          Directeur de la publication : [NOM DU RESPONSABLE À RENSEIGNER]</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>2. Hébergement</h3>
+          <p>Ce site est hébergé par [NOM DE L'HÉBERGEUR À RENSEIGNER], dont le siège social est situé à [ADRESSE DE L'HÉBERGEUR À RENSEIGNER].</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>3. Propriété intellectuelle</h3>
+          <p>L'ensemble des éléments composant ce site (textes, images, logos, structure, design, code source) sont la propriété exclusive d'EUROGAM ou de ses partenaires et sont protégés par le droit de la propriété intellectuelle.</p>
+          <p>Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit et sur quelque support que ce soit, est interdite sans l'autorisation écrite préalable d'EUROGAM.</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>4. Politique de confidentialité & Protection des données (RGPD)</h3>
+
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucune collecte de données à fins marketing</div><br>
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucun cookie de suivi ou de traçage</div><br>
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucun outil d'analyse d'audience (Google Analytics ou équivalent)</div>
+
+          <p style="margin-top:1rem"><strong>Ce site ne collecte aucune donnée personnelle à des fins commerciales ou marketing.</strong></p>
+
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--blue);margin:1.2rem 0 .5rem;text-transform:uppercase">4.1 Données collectées via le formulaire de contact</h4>
+          <p>Les données que vous saisissez dans le formulaire de contact (nom, prénom, entreprise, email, téléphone, message) sont collectées <strong>uniquement</strong> dans le but de répondre à votre demande. Ces données sont :</p>
+          <ul style="font-size:.9rem;color:var(--gray-dark);line-height:1.8;padding-left:1.2rem">
+            <li>Utilisées exclusivement pour le traitement de votre demande ou votre demande de devis</li>
+            <li>Jamais cédées, revendues ou transmises à des tiers</li>
+            <li>Jamais utilisées à des fins publicitaires ou de prospection commerciale</li>
+            <li>Conservées pendant la durée strictement nécessaire au traitement de votre demande</li>
+          </ul>
+
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--blue);margin:1.2rem 0 .5rem;text-transform:uppercase">4.2 Cookies et traceurs</h4>
+          <div class="legal-badge"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Aucun cookie de traçage ou d'analyse</div>
+          <p style="margin-top:.8rem">Ce site <strong>n'utilise aucun cookie de traçage, de profilage ou de mesure d'audience</strong>. Aucun outil tel que Google Analytics, Facebook Pixel, ou tout équivalent n'est intégré à ce site.</p>
+          <p>Des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés (ex. : mémorisation des préférences de navigation). Ces cookies ne collectent aucune donnée personnelle identifiable et ne nécessitent pas votre consentement au sens du RGPD.</p>
+
+          <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--blue);margin:1.2rem 0 .5rem;text-transform:uppercase">4.3 Vos droits</h4>
+          <p>Conformément au Règlement Général sur la Protection des Données (RGPD – Règlement UE 2016/679) et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles :</p>
+          <ul style="font-size:.9rem;color:var(--gray-dark);line-height:1.8;padding-left:1.2rem">
+            <li><strong>Droit d'accès</strong> : obtenir une copie de vos données</li>
+            <li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
+            <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+            <li><strong>Droit à la limitation</strong> : limiter le traitement de vos données</li>
+            <li><strong>Droit d'opposition</strong> : vous opposer à tout traitement</li>
+            <li><strong>Droit à la portabilité</strong> : récupérer vos données dans un format lisible</li>
+          </ul>
+          <p style="margin-top:.8rem">Pour exercer ces droits, contactez-nous : <a href="mailto:contact@eurogam.fr" style="color:var(--orange);font-weight:600">contact@eurogam.fr</a></p>
+          <p>Vous pouvez également introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--orange)">www.cnil.fr</a></p>
+        </div>
+
+        <div class="legal-section">
+          <h3>5. Limitation de responsabilité</h3>
+          <p>EUROGAM s'efforce de maintenir les informations publiées sur ce site à jour et exactes. Cependant, EUROGAM ne peut garantir l'exactitude, la complétude ou la mise à jour de toutes les informations diffusées sur ce site.</p>
+          <p>EUROGAM ne saurait être tenu responsable des dommages directs ou indirects résultant de l'accès au site ou de l'utilisation des informations qui y figurent, y compris l'indisponibilité du site, des intrusions extérieures, la présence de virus informatiques ou tout autre problème technique.</p>
+          <p>Les liens hypertextes présents sur le site peuvent renvoyer vers des sites extérieurs. EUROGAM décline toute responsabilité quant au contenu de ces sites tiers.</p>
+        </div>
+
+        <div class="legal-section">
+          <h3>6. Droit applicable</h3>
+          <p>Le présent site et les présentes mentions légales sont soumis au droit français. En cas de litige, les tribunaux compétents de Joué-lès-Tours (Indre-et-Loire) seront seuls compétents.</p>
+          <p style="font-size:.8rem;color:var(--gray-mid);margin-top:1rem">Dernière mise à jour : Avril 2025</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="logo-area" href="#" onclick="showPage('accueil')" style="text-decoration:none;display:inline-flex">
+          <img src="logo.jpg" alt="EUROGAM – Pièces autos pour les pros – Joué les Tours" class="footer-logo-img">
+          <span class="logo">EURO<span>GAM</span></span>
+        </a>
+        <p class="footer-desc">Distributeur de pièces automobiles pour professionnels.<br>8 rue de Prony — 37300 Joué-lès-Tours</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('accueil')">Accueil</a></li>
+          <li><a href="#" onclick="showPage('produits')">Produits</a></li>
+          <li><a href="#" onclick="showPage('offres')">Offres du moment</a></li>
+          <li><a href="#" onclick="showPage('equipe')">Équipe</a></li>
+          <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
+          <li><a href="#" onclick="showPage('contact')">Nous contacter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Marques</h4>
+        <ul><li><a href="#">Bosch</a></li><li><a href="#">Sasic</a></li><li><a href="#">Dayco</a></li><li><a href="#">Mahle</a></li><li><a href="#">Cevam</a></li><li><a href="#">SBS</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul><li><a href="#" onclick="showPage('mentions')">Mentions légales</a></li><li><a href="#" onclick="showPage('mentions')">Politique de confidentialité</a></li><li><a href="#" onclick="showPage('mentions')">Cookies</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 EUROGAM – Joué-lès-Tours (37)</span>
+      <span>pièces auto Joué-lès-Tours · distributeur pièces auto · Bosch · Mahle · Dayco · Sasic · Cevam · SBS</span>
+    </div>
+  </div>
+</footer>
+ 
+
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Retour en haut">↑</button>
+
+<script>
+
+/* ════ FLYER IMAGES ════ */
+const FLYER1 = "flyer-janvier.jpg";
+const FLYER2 = "flyer-juin.png";
+const FLYER3 = "flyer-mai.png";
+const FLYER4 = "flyer-juillet.jpg";
+
+/* ════ OFFERS DATA ════ */
+/* ════ FLYER IMAGES (source unique) ════ */
+
+/* ════ OFFERS DATA — source unique, sync auto accueil ↔ page offres ════ */
+let offresData = [
+  {
+    slogan:"EN JANVIER, FONCEZ SUR LES PRIX !",
+    desc:"5% de remise sur tous vos achats*. Du 2 au 31 janvier. *Versés le mois suivant sous forme de chèques-cadeaux.",
+    badge:"5% remise",
+    img: FLYER1
+  },
+  {
+    slogan:"TOP DÉPART, LES PRIX DÉVALENT !",
+    desc:"5% de remise sur tous vos achats*. Du 1ᵉʳ au 30 juin. *Versés le mois suivant sous forme de chèques-cadeaux.",
+    badge:"5% remise",
+    img: FLYER2
+  },
+  {
+    slogan:"PRENEZ LE VOLANT DES BONNES AFFAIRES !",
+    desc:"5% de remise sur tous vos achats*. Du 2 au 31 mai. Chaque tour compte, chaque € aussi ! *Versés le mois suivant sous forme de chèques-cadeaux.",
+    badge:"5% remise",
+    img: FLYER3
+  },
+  {
+    slogan:"EN ÉTÉ, FAITES DÉRAPER LES PRIX !",
+    desc:"5% de remise sur tous vos achats*. Du 2 au 31 juillet. *Versés le mois suivant sous forme de chèques-cadeaux.",
+    badge:"5% remise",
+    img: FLYER4
+  },
+];
+ 
+/* ════ RENDER OFFERS — source unique ════ */
+function renderOffres(){
+  function flyerImg(o,cls){
+    if(!o.img) return '';
+    return `<div class="${cls}"><img src="${o.img}" alt="${o.slogan}" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;max-height:300px"></div>`;
+  }
+  const prev = document.getElementById('offres-preview-container');
+  if(prev){ prev.innerHTML = offresData.slice(0,2).map(o=>`
+    <div class="offre-card reveal">
+      ${flyerImg(o,'offre-flyer-wrap')}
+      <div class="offre-body">
+        <div class="offre-badge-promo">${o.badge}</div>
+        <div class="offre-slogan">${o.slogan}</div>
+        <p class="offre-desc">${o.desc}</p>
+        <button class="offre-cta" onclick="showPage('contact')">Demander un devis →</button>
+      </div>
+    </div>`).join(''); }
+  const full = document.getElementById('offres-full-container');
+  if(full){ full.innerHTML = offresData.map((o,i)=>`
+    <div class="offre-card-full reveal d${(i%4)+1}">
+      ${flyerImg(o,'offre-full-flyer-wrap')}
+      <div class="offre-full-body">
+        <div class="offre-full-badge">${o.badge}</div>
+        <div class="offre-full-slogan">${o.slogan}</div>
+        <p class="offre-full-desc">${o.desc}</p>
+        <div class="offre-full-actions">
+          <button class="btn-primary" onclick="showPage('contact')">Demander un devis</button>
+        </div>
+      </div>
+    </div>`).join(''); }
+  initReveal();
+}
+ 
+/* ════ PAGE NAV ════ */
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(initReveal,100);
+  if(id==='accueil') startCounters();
+}
+ 
+/* ════ FAQ ════ */
+function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
+ 
+
+
+
+/* ════ SCROLL REVEAL ════ */
+function initReveal(){
+  const els=document.querySelectorAll('.page.active .reveal,.page.active .reveal-left,.page.active .reveal-right');
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(el=>obs.observe(el));
+}
+document.addEventListener('DOMContentLoaded',initReveal);
+ 
+/* ════ PARALLAX ════ */
+const pbg=document.getElementById('parallax-bg');
+window.addEventListener('scroll',()=>{if(pbg)pbg.style.transform=`translateY(${window.scrollY*.3}px)`});
+ 
+/* ════ COUNTERS ════ */
+let cStarted=false;
+function startCounters(){
+  if(cStarted)return;
+  document.querySelectorAll('.counter-num').forEach(el=>{
+    const target=+el.dataset.target,suffix=el.dataset.suffix||'';
+    let cur=0; const step=target/110;
+    const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t)}el.textContent=Math.floor(cur)+suffix},16);
+  });
+  cStarted=true;
+}
+const cSection=document.querySelector('.counters-section');
+if(cSection){const obs=new IntersectionObserver(e=>{if(e[0].isIntersecting){startCounters();obs.disconnect()}},{threshold:.3});obs.observe(cSection)}
+ 
+
+ 
+/* ════ ADMIN ════ */
+const ADMIN_PWD='RodusedeuroG';
+let _adminFileTarget = null; // index of row waiting for file upload
+
+function openAdminModal(){
+  document.getElementById('admin-modal').classList.add('open');
+  document.getElementById('admin-pwd').value='';
+  document.getElementById('admin-err').style.display='none';
+  setTimeout(()=>document.getElementById('admin-pwd').focus(),100);
+}
+function closeAdminModal(){document.getElementById('admin-modal').classList.remove('open')}
+function checkAdminPwd(){
+  if(document.getElementById('admin-pwd').value===ADMIN_PWD){closeAdminModal();openAdminPanel()}
+  else{document.getElementById('admin-err').style.display='block';document.getElementById('admin-pwd').value='';document.getElementById('admin-pwd').focus()}
+}
+function openAdminPanel(){
+  const panel=document.getElementById('admin-panel');
+  if(!panel) return;
+  panel.classList.add('open');
+  renderAdminRows();
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}),80);
+}
+
+/* ── collect current field values back into offresData ── */
+function _collectAdminFields(){
+  offresData = offresData.map((o,i)=>({
+    ...o,
+    slogan: document.getElementById(`as-${i}`)?.value || o.slogan,
+    desc:   document.getElementById(`ad-${i}`)?.value || o.desc,
+    badge:  document.getElementById(`ab-${i}`)?.value || o.badge,
+    img:    document.getElementById(`ai-${i}`)?.value  || o.img || '',
+  }));
+}
+
+/* ── render all admin rows ── */
+function renderAdminRows(){
+  const list = document.getElementById('admin-offres-list');
+  if(!list) return; /* panel not open yet — skip */
+  list.innerHTML = offresData.map((o,i)=>{
+    const isAccueil = i < 2;
+    const thumbHtml = o.img
+      ? `<img class="admin-img-thumb" src="${o.img.length > 300 ? o.img.substring(0,80)+'…' : o.img}" id="athumb-${i}" style="width:56px;height:46px;object-fit:cover;border-radius:4px;border:1px solid var(--gray-light)">`
+      : `<div class="admin-img-thumb-placeholder" id="athumb-${i}">🖼</div>`;
+
+    return `
+    <div class="admin-row" id="adrow-${i}"
+         draggable="true"
+         ondragstart="adminDragStart(event,${i})"
+         ondragover="adminDragOver(event)"
+         ondrop="adminDrop(event,${i})"
+         ondragend="adminDragEnd()">
+
+      <!-- TOP BAR: handle + position + accueil tag + delete -->
+      <div class="admin-row-top" style="display:flex;align-items:center;gap:.6rem">
+        <span class="admin-handle" title="Glisser pour réordonner">⠿</span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;color:var(--gray-mid);min-width:22px">#${i+1}</span>
+        ${isAccueil ? `<span class="admin-accueil-tag">🏠 Accueil</span>` : ''}
+        <div class="admin-order-btns" style="margin-left:auto">
+          <button class="admin-btn-order" onclick="adminMoveUp(${i})" ${i===0?'disabled':''} title="Monter">▲</button>
+          <button class="admin-btn-order" onclick="adminMoveDown(${i})" ${i===offresData.length-1?'disabled':''} title="Descendre">▼</button>
+        </div>
+        <button class="admin-del" onclick="adminDel(${i})" title="Supprimer cette offre">🗑</button>
+      </div>
+
+      <!-- TEXT FIELDS -->
+      <div class="admin-row-fields">
+        <div>
+          <div class="admin-section-lbl">Titre / Slogan</div>
+          <input type="text" id="as-${i}" value="${o.slogan.replace(/"/g,'&quot;').replace(/'/g,"&#39;")}" placeholder="Titre de l'offre">
+        </div>
+        <div>
+          <div class="admin-section-lbl">Description</div>
+          <textarea id="ad-${i}" placeholder="Description courte">${o.desc}</textarea>
+        </div>
+        <div>
+          <div class="admin-section-lbl">Badge</div>
+          <input type="text" id="ab-${i}" value="${o.badge}" placeholder="Ex: 5% remise">
+        </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div style="display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.6rem .8rem;background:#f8fafc;border-radius:6px;border:1px solid var(--gray-light)">
+        <div class="admin-section-lbl" style="margin:0;white-space:nowrap">Image flyer</div>
+        ${thumbHtml}
+        <button class="admin-file-btn" onclick="adminTriggerUpload(${i})" type="button">📁 Upload</button>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;color:var(--gray-mid)">ou</span>
+        <input type="text" id="ai-${i}" class="admin-url-input"
+          value="${o.img && o.img.startsWith('data:') ? '' : (o.img||'')}"
+          placeholder="URL de l'image (https://…)"
+          oninput="adminPreviewUrl(${i})"
+          style="flex:1;min-width:180px;font-size:.75rem;padding:.4rem .6rem">
+        ${o.img && o.img.startsWith('data:') ? `<span style="font-size:.7rem;color:#166534;font-family:'Barlow Condensed',sans-serif;font-weight:700">✅ Fichier chargé</span>` : ''}
+      </div>
+
+    </div>`;
+  }).join('');
+
+  initAdminDragDrop();
+}
+
+/* ── file upload ── */
+function adminTriggerUpload(i){
+  _adminFileTarget = i;
+  document.getElementById('admin-file-input').value = '';
+  document.getElementById('admin-file-input').click();
+}
+function adminHandleFileUpload(input){
+  if(!input.files || !input.files[0]) return;
+  const i = _adminFileTarget;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    _collectAdminFields();
+    offresData[i].img = e.target.result;
+    _saveOffersToStorage();
+    renderAdminRows();
+    renderOffres();
+    _flashSaved('Image mise à jour et sauvegardée !');
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+/* ── url preview ── */
+function adminPreviewUrl(i){
+  const val = document.getElementById(`ai-${i}`)?.value?.trim();
+  if(!val) return;
+  const thumb = document.getElementById(`athumb-${i}`);
+  if(!thumb) return;
+  const img = document.createElement('img');
+  img.className = 'admin-img-thumb';
+  img.style.cssText = 'width:56px;height:46px;object-fit:cover;border-radius:4px;border:1px solid var(--gray-light)';
+  img.src = val;
+  img.onerror = ()=>{};
+  thumb.replaceWith(img);
+}
+
+/* ── move up/down ── */
+function adminMoveUp(i){
+  if(i===0) return;
+  _collectAdminFields();
+  [offresData[i-1], offresData[i]] = [offresData[i], offresData[i-1]];
+  _saveOffersToStorage();
+  renderAdminRows();
+  renderOffres();
+}
+function adminMoveDown(i){
+  if(i===offresData.length-1) return;
+  _collectAdminFields();
+  [offresData[i], offresData[i+1]] = [offresData[i+1], offresData[i]];
+  _saveOffersToStorage();
+  renderAdminRows();
+  renderOffres();
+}
+
+/* ── drag & drop ── */
+let _dragSrcIdx = null;
+function initAdminDragDrop(){
+  // nothing extra needed: events are inline
+}
+function adminDragStart(e, i){
+  _dragSrcIdx = i;
+  e.currentTarget.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+function adminDragOver(e){
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  // highlight target
+  document.querySelectorAll('.admin-row').forEach(r=>r.classList.remove('drag-over'));
+  e.currentTarget.classList.add('drag-over');
+}
+function adminDrop(e, targetIdx){
+  e.preventDefault();
+  if(_dragSrcIdx === null || _dragSrcIdx === targetIdx) return;
+  _collectAdminFields();
+  const moved = offresData.splice(_dragSrcIdx, 1)[0];
+  offresData.splice(targetIdx, 0, moved);
+  _dragSrcIdx = null;
+  _saveOffersToStorage();
+  renderAdminRows();
+  renderOffres();
+}
+function adminDragEnd(){
+  _dragSrcIdx = null;
+  document.querySelectorAll('.admin-row').forEach(r=>{
+    r.classList.remove('dragging','drag-over');
+  });
+}
+
+/* ── delete ── */
+function adminDel(i){
+  if(!confirm('Supprimer cette offre ?')) return;
+  _collectAdminFields();
+  offresData.splice(i,1);
+  _saveOffersToStorage();
+  renderAdminRows();
+  renderOffres();
+}
+
+/* ── add ── */
+function adminAddOffre(){
+  _collectAdminFields();
+  offresData.push({
+    slogan:'Nouvelle offre',
+    desc:"Description de l'offre.",
+    badge:'Nouveau',
+    img:''
+  });
+  renderAdminRows();
+  // scroll to last
+  setTimeout(()=>{
+    const rows = document.querySelectorAll('.admin-row');
+    rows[rows.length-1]?.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }, 80);
+}
+
+/* ── save & publish ── */
+function adminSaveOffres(){
+  _collectAdminFields();
+  // apply URL fields (not data: ones)
+  offresData = offresData.map((o,i)=>{
+    const urlVal = document.getElementById(`ai-${i}`)?.value?.trim();
+    if(urlVal && urlVal.startsWith('http')){
+      o.img = urlVal;
+    }
+    return o;
+  });
+  _saveOffersToStorage(); // ← persist to localStorage
+  renderOffres();
+  renderAdminRows();
+  _flashSaved('Offres sauvegardées et publiées !');
+}
+
+function _flashSaved(msg){
+  const m = document.getElementById('adm-saved');
+  if(!m) return;
+  m.textContent = msg;
+  m.style.display = 'inline-block';
+  setTimeout(()=>{ if(m) m.style.display='none'; }, 3500);
+}
+ 
+
+/* ════ IMAGE DATA ════ */
+
+/* ════ PARTICLES ════ */
+(function createParticles(){
+  const c = document.getElementById('hero-particles');
+  if(!c) return;
+  for(let i=0;i<20;i++){
+    const p = document.createElement('div');
+    p.className = 'hparticle';
+    const size = 2 + Math.random()*5;
+    const isOrange = Math.random() > 0.45;
+    p.style.cssText = [
+      `left:${Math.random()*100}%`,
+      `bottom:${Math.random()*25}%`,
+      `width:${size}px`,
+      `height:${size}px`,
+      `background:${isOrange ? '#f07010' : 'rgba(255,255,255,0.55)'}`,
+      `--pdur:${4+Math.random()*7}s`,
+      `--pdelay:${Math.random()*7}s`,
+      `--pdrift:${(Math.random()-0.5)*70}px`,
+    ].join(';');
+    c.appendChild(p);
+  }
+})();
+
+/* ════ SCROLL TOP ════ */
+window.addEventListener('scroll', function(){
+  const btn = document.getElementById('scroll-top');
+  if(btn) btn.classList.toggle('visible', window.scrollY > 400);
+}, {passive:true});
+
+/* ════ ENHANCED COUNTER (replaces basic one) ════ */
+(function setupCounters(){
+  let done = false;
+  const section = document.querySelector('.counters-section');
+  if(!section) return;
+  const obs = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting && !done) {
+      done = true;
+      document.querySelectorAll('.counter-num').forEach(el => {
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const steps = 80;
+        const inc = target / steps;
+        let cur = 0; let step = 0;
+        el.textContent = '0' + suffix;
+        const t = setInterval(() => {
+          step++;
+          // ease-out
+          const progress = step / steps;
+          const eased = 1 - Math.pow(1 - progress, 3);
+          cur = Math.round(target * eased);
+          el.textContent = cur.toLocaleString('fr') + suffix;
+          if(step >= steps) { el.textContent = target.toLocaleString('fr') + suffix; clearInterval(t); }
+        }, duration / steps);
+      });
+    }
+  }, {threshold: 0.35});
+  obs.observe(section);
+})();
+
+/* ════ PERSISTENCE DES OFFRES (localStorage) ════ */
+/*
+ * Les offres modifiées dans l'admin sont sauvegardées dans
+ * localStorage sous la clé 'eurogam_offres_v1'.
+ * Au chargement de la page, si des offres sauvegardées existent
+ * elles remplacent les offres par défaut codées en dur.
+ * Ainsi, toute modification survive à un rechargement de page.
+ *
+ * Pour remettre les offres d'origine : dans la console :
+ *   localStorage.removeItem('eurogam_offres_v1'); location.reload();
+ */
+const _OFFERS_KEY = 'eurogam_offres_v1';
+
+function _saveOffersToStorage(){
+  try {
+    // Sauvegarde sans les images base64 trop grandes si > 500KB
+    // (les images base64 des flyers originaux restent dans le code source)
+    const toSave = offresData.map(o => ({
+      slogan: o.slogan,
+      desc:   o.desc,
+      badge:  o.badge,
+      // On ne sauvegarde l'image que si c'est une URL http ou une petite base64
+      img:    (o.img && (o.img.startsWith('http') || o.img.length < 500000))
+              ? o.img : '__KEEP_DEFAULT__'
+    }));
+    localStorage.setItem(_OFFERS_KEY, JSON.stringify(toSave));
+  } catch(e) {
+    // localStorage plein (images trop grosses) : on sauvegarde sans images
+    try {
+      const toSave = offresData.map(o=>({slogan:o.slogan,desc:o.desc,badge:o.badge,img:'__KEEP_DEFAULT__'}));
+      localStorage.setItem(_OFFERS_KEY, JSON.stringify(toSave));
+    } catch(e2){ /* silent */ }
+  }
+}
+
+function _loadOffersFromStorage(){
+  try {
+    const raw = localStorage.getItem(_OFFERS_KEY);
+    if(!raw) return; // rien de sauvegardé → on garde les offres par défaut
+    const saved = JSON.parse(raw);
+    if(!Array.isArray(saved) || saved.length === 0) return;
+    offresData = offresData.map((orig, i) => {
+      if(i >= saved.length) return orig; // offre par défaut s'il y en a plus dans le code
+      const s = saved[i];
+      return {
+        ...orig,                             // garde img, emoji, color du code source
+        slogan: s.slogan || orig.slogan,
+        desc:   s.desc   || orig.desc,
+        badge:  s.badge  || orig.badge,
+        img:    (s.img && s.img !== '__KEEP_DEFAULT__') ? s.img : orig.img,
+      };
+    });
+    // Si l'admin a ajouté des offres supplémentaires
+    if(saved.length > offresData.length){
+      for(let i = offresData.length; i < saved.length; i++){
+        const s = saved[i];
+        offresData.push({
+          slogan: s.slogan || 'Offre',
+          desc:   s.desc   || '',
+          badge:  s.badge  || 'Promo',
+          img:    (s.img && s.img !== '__KEEP_DEFAULT__') ? s.img : '',
+        });
+      }
+    }
+    // Si l'admin a supprimé des offres
+    if(saved.length < offresData.length){
+      offresData = offresData.slice(0, saved.length);
+    }
+  } catch(e){ /* silent — on garde les offres par défaut */ }
+}
+
+/* ════ INIT ════ */
+_loadOffersFromStorage(); // charge les offres sauvegardées si elles existent
+renderOffres();
+
+</script>
+</body>
+</html>.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:1.4rem;text-align:center;backdrop-filter:blur(4px);transition:all .2s}
 .stat-card:hover{background:rgba(255,255,255,.1);border-color:var(--orange)}
 .stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:900;color:var(--orange);line-height:1}
